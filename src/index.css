@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #060E1E;
+  --color-navy-900: #0A1628;
+  --color-navy-800: #0F2040;
+  --color-navy-700: #162D55;
+  --color-navy-600: #1E3A6E;
+  --color-navy-500: #2A4E8C;
+  --color-ivory: #F7F6F2;
+  --color-ivory-dark: #EAE9E3;
+  --color-ivory-deep: #D8D6CD;
+  --color-crimson: #E8951A;
+  --color-crimson-dark: #C47510;
+  --color-crimson-light: #F5A830;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background-color: #f7f6f2;
+  color: #0a1628;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Subtle industrial grid — dark sections */
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Ivory grid — light sections */
+.ivory-grid {
+  background-image:
+    linear-gradient(rgba(10, 22, 40, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 22, 40, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #eae9e3;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8951A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C47510;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
