@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   phone: '0282 726 88 88',
   address: 'Çerkezköy Kapalı Pazar Alanı, Çerkezköy / Tekirdağ',
   mapsDirectionsUrl:
-    'https://www.google.com/maps/dir//Çerkezköy+Ticaret+ve+Sanayi+Odası,+Gazi+Osman+Paşa,+Hayri+Batur+Cd.+No:5+D:1,+59500+Çerkezköy/Tekirdağ/@41.2820396,27.9981517,16z',
+    'https://www.google.com/maps/dir/?api=1&destination=41.2820396,27.9981517',
   mapEmbedUrl:
     'https://maps.google.com/maps?q=41.2820396,27.9981517&z=16&output=embed&hl=tr',
 }
