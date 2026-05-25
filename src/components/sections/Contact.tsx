@@ -32,7 +32,7 @@ const contactCards = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark">
+    <section id="iletisim" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="mb-14">

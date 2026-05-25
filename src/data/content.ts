@@ -22,18 +22,18 @@ export const SITE_CONFIG = {
 // ─── Navigation ───────────────────────────────────────────────────────────────
 
 export const NAV_ITEMS = [
-  { label: 'Ana Sayfa', href: '#hero' },
-  { label: 'Neden ÇEF?', href: '#why-cef' },
-  { label: 'Sektörler', href: '#sectors' },
-  { label: 'Katılımcı', href: '#participation' },
-  { label: 'Ziyaretçi', href: '#visitor' },
-  { label: 'Geçmiş Fuarlar', href: '#past-fairs' },
+  { label: 'Ana Sayfa', href: '#anasayfa' },
+  { label: 'Neden ÇEF?', href: '#neden-cef' },
+  { label: 'Sektörler', href: '#sektorler' },
+  { label: 'Katılımcı', href: '#katilim' },
+  { label: 'Ziyaretçi', href: '#ziyaretci' },
+  { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
 ]
 
 export const HAKKINDA_DROPDOWN = [
-  { label: 'Galeri', href: '#gallery', description: 'Fotoğraf arşivini incele' },
-  { label: 'Ulaşım', href: '#location', description: 'Fuar alanına ulaşım bilgisi' },
-  { label: 'İletişim', href: '#contact', description: 'Bize ulaşın' },
+  { label: 'Galeri', href: '#galeri', description: 'Fotoğraf arşivini incele' },
+  { label: 'Ulaşım', href: '#ulasim', description: 'Fuar alanına ulaşım bilgisi' },
+  { label: 'İletişim', href: '#iletisim', description: 'Bize ulaşın' },
 ]
 
 // ─── Why CEF? ─────────────────────────────────────────────────────────────────
@@ -154,19 +154,19 @@ export const FOOTER_LINKS = [
   {
     heading: 'Fuar',
     items: [
-      { label: 'Ana Sayfa', href: '#hero' },
-      { label: 'Neden ÇEF?', href: '#why-cef' },
-      { label: 'Sektörler', href: '#sectors' },
-      { label: 'Geçmiş Fuarlar', href: '#past-fairs' },
+      { label: 'Ana Sayfa', href: '#anasayfa' },
+      { label: 'Neden ÇEF?', href: '#neden-cef' },
+      { label: 'Sektörler', href: '#sektorler' },
+      { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
     ],
   },
   {
     heading: 'Katılım',
     items: [
-      { label: 'Katılımcı Bilgisi', href: '#participation' },
-      { label: 'Ziyaretçi Kayıt', href: '#visitor' },
-      { label: 'Galeri', href: '#gallery' },
-      { label: 'Ulaşım', href: '#location' },
+      { label: 'Katılımcı Bilgisi', href: '#katilim' },
+      { label: 'Ziyaretçi Kayıt', href: '#ziyaretci' },
+      { label: 'Galeri', href: '#galeri' },
+      { label: 'Ulaşım', href: '#ulasim' },
     ],
   },
 ]

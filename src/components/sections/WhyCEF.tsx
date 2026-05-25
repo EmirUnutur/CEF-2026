@@ -18,7 +18,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function WhyCEF() {
   return (
-    <section id="why-cef" className="bg-ivory ivory-grid py-20 sm:py-32">
+    <section id="neden-cef" className="bg-ivory ivory-grid py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="mb-16">

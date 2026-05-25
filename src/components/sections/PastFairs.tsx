@@ -15,7 +15,7 @@ export default function PastFairs() {
   }
 
   return (
-    <section id="past-fairs" className="bg-ivory py-20 sm:py-32">
+    <section id="gecmis-fuarlar" className="bg-ivory py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -48,7 +48,7 @@ export default function PastFairs() {
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
-            <Button variant="outline" size="md" href="#gallery">
+            <Button variant="outline" size="md" href="#galeri">
               Tüm Galeri
               <ArrowRightIcon className="w-4 h-4" />
             </Button>

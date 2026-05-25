@@ -12,7 +12,7 @@ const IMAGES = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-20 sm:py-32">
+    <section id="hakkinda" className="bg-white py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -68,7 +68,7 @@ export default function About() {
                 </div>
               </div>
 
-              <Button variant="primary" size="lg" href="#why-cef">
+              <Button variant="primary" size="lg" href="#neden-cef">
                 Neden ÇEF? →
               </Button>
             </div>

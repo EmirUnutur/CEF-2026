@@ -23,7 +23,7 @@ export default function Hero() {
 
   return (
     <section
-      id="hero"
+      id="anasayfa"
       ref={ref}
       className="relative min-h-screen flex flex-col overflow-hidden bg-navy-900"
     >
@@ -143,10 +143,10 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#visitor">
+              <Button variant="primary" size="lg" href="#ziyaretci">
                 Ziyaretçi Kayıt
               </Button>
-              <Button variant="white-outline" size="lg" href="#participation">
+              <Button variant="white-outline" size="lg" href="#katilim">
                 Katılımcı Ol →
               </Button>
             </motion.div>

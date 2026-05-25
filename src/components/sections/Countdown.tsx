@@ -44,7 +44,7 @@ export default function Countdown() {
   const time = useCountdown(SITE_CONFIG.targetDate)
 
   return (
-    <section id="countdown" className="bg-ivory ivory-grid py-20 sm:py-28">
+    <section id="geri-sayim" className="bg-ivory ivory-grid py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
         <motion.div
@@ -96,10 +96,10 @@ export default function Countdown() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button variant="primary" size="lg" href="#visitor">
+          <Button variant="primary" size="lg" href="#ziyaretci">
             Ziyaretçi Kaydı Yap
           </Button>
-          <Button variant="outline" size="lg" href="#participation">
+          <Button variant="outline" size="lg" href="#katilim">
             Katılımcı Bilgisi Al
           </Button>
         </motion.div>

@@ -23,7 +23,7 @@ const transport = [
 
 export default function Location() {
   return (
-    <section id="location" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
+    <section id="ulasim" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
       {/* Crimson left accent */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-crimson/50" aria-hidden="true" />
 

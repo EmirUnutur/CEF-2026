@@ -1,10 +1,10 @@
 import { HomeIcon, UserPlusIcon, PhotoIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const ITEMS = [
-  { label: 'Ana Sayfa', Icon: HomeIcon, href: '#hero', highlight: false },
-  { label: 'Ziyaretçi', Icon: UserPlusIcon, href: '#visitor', highlight: true },
-  { label: 'Galeri', Icon: PhotoIcon, href: '#gallery', highlight: false },
-  { label: 'İletişim', Icon: EnvelopeIcon, href: '#contact', highlight: false },
+  { label: 'Ana Sayfa', Icon: HomeIcon, href: '#anasayfa', highlight: false },
+  { label: 'Ziyaretçi', Icon: UserPlusIcon, href: '#ziyaretci', highlight: true },
+  { label: 'Galeri', Icon: PhotoIcon, href: '#galeri', highlight: false },
+  { label: 'İletişim', Icon: EnvelopeIcon, href: '#iletisim', highlight: false },
 ]
 
 export default function MobileNav() {

@@ -4,7 +4,7 @@ import { STATS } from '../../data/content'
 
 export default function Stats() {
   return (
-    <section id="stats" className="bg-white py-20 sm:py-28 border-t border-ivory-dark">
+    <section id="istatistikler" className="bg-white py-20 sm:py-28 border-t border-ivory-dark">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="text-center mb-14">

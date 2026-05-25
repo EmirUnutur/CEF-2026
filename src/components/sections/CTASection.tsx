@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '../../data/content'
 export default function CTASection() {
   return (
     <section
-      id="cta"
+      id="kayit"
       className="bg-navy-950 industrial-grid py-24 sm:py-36 relative overflow-hidden"
     >
       {/* Decorative elements */}
@@ -66,10 +66,10 @@ export default function CTASection() {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button variant="primary" size="lg" href="#visitor">
+            <Button variant="primary" size="lg" href="#ziyaretci">
               Ziyaretçi Kayıt
             </Button>
-            <Button variant="white-outline" size="lg" href="#participation">
+            <Button variant="white-outline" size="lg" href="#katilim">
               Katılımcı Ol
             </Button>
             <Button variant="ghost" size="lg" href={`mailto:${SITE_CONFIG.email}`}>

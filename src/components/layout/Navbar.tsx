@@ -42,7 +42,7 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group" aria-label="ÇEF — Çerkezköy Endüstriyel Fuarı Ana Sayfa">
+        <a href="#anasayfa" className="flex items-center gap-2 group" aria-label="ÇEF — Çerkezköy Endüstriyel Fuarı Ana Sayfa">
           <span
             className={`font-display text-3xl tracking-widest leading-none transition-colors duration-300 ${
               scrolled ? 'text-navy-900' : 'text-white'
@@ -131,7 +131,7 @@ export default function Navbar() {
         {/* Right: CTA + Hamburger */}
         <div className="flex items-center gap-3">
           <div className="hidden sm:block">
-            <Button variant={scrolled ? 'primary' : 'white-outline'} size="sm" href="#visitor">
+            <Button variant={scrolled ? 'primary' : 'white-outline'} size="sm" href="#ziyaretci">
               Ziyaretçi Kayıt
             </Button>
           </div>
@@ -216,7 +216,7 @@ export default function Navbar() {
               </motion.div>
 
               <div className="pt-4">
-                <Button variant="primary" size="md" className="w-full" href="#visitor">
+                <Button variant="primary" size="md" className="w-full" href="#ziyaretci">
                   Ziyaretçi Kayıt
                 </Button>
               </div>

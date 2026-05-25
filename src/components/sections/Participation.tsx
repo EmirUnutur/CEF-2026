@@ -120,7 +120,7 @@ function ParticipationCard({
 
 export default function Participation() {
   return (
-    <section id="participation" className="bg-ivory ivory-grid py-20 sm:py-32">
+    <section id="katilim" className="bg-ivory ivory-grid py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="text-center mb-14">
@@ -152,7 +152,7 @@ export default function Participation() {
               'Özel B2B görüşme imkânı',
             ]}
             ctaLabel="Katılımcı Bilgisi Al"
-            ctaHref="#contact"
+            ctaHref="#iletisim"
             index={0}
           />
           <ParticipationCard
@@ -169,7 +169,7 @@ export default function Participation() {
               'Fuar kataloğu ve rehber',
             ]}
             ctaLabel="Ziyaretçi Kayıt"
-            ctaHref="#visitor"
+            ctaHref="#ziyaretci"
             index={1}
           />
         </div>

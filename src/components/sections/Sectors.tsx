@@ -30,7 +30,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Sectors() {
   return (
-    <section id="sectors" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
+    <section id="sektorler" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
       {/* Background accent */}
       <div
         className="absolute right-0 top-0 bottom-0 w-1 bg-crimson/40"
