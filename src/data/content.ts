@@ -23,7 +23,6 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: 'Ana Sayfa', href: '#hero' },
-  { label: 'Fuar Hakkında', href: '#about' },
   { label: 'Neden ÇEF?', href: '#why-cef' },
   { label: 'Sektörler', href: '#sectors' },
   { label: 'Katılımcı', href: '#participation' },
@@ -156,7 +155,6 @@ export const FOOTER_LINKS = [
     heading: 'Fuar',
     items: [
       { label: 'Ana Sayfa', href: '#hero' },
-      { label: 'Fuar Hakkında', href: '#about' },
       { label: 'Neden ÇEF?', href: '#why-cef' },
       { label: 'Sektörler', href: '#sectors' },
       { label: 'Geçmiş Fuarlar', href: '#past-fairs' },
