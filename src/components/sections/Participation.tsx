@@ -30,7 +30,7 @@ function ParticipationCard({
 
   return (
     <motion.div
-      className={`relative flex flex-col p-8 sm:p-12 overflow-hidden ${
+      className={`relative flex flex-col p-5 sm:p-12 overflow-hidden ${
         isExhibitor
           ? 'bg-navy-900 text-white'
           : 'bg-white border border-ivory-dark text-navy-900'

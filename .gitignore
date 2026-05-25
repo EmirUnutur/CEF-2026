@@ -1,3 +1,9 @@
+# Claude Code internal files
+.claude/
+
+# Development reference files
+references/
+
 # Logs
 logs
 *.log

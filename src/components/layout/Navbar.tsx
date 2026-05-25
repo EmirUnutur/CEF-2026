@@ -164,7 +164,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -16 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
                   className="font-sans text-sm font-medium text-navy-700 hover:text-crimson py-3 border-b border-ivory-dark transition-colors duration-150"

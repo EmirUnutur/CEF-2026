@@ -16,16 +16,16 @@ import SectionTitle from '../ui/SectionTitle'
 import { SECTORS } from '../../data/content'
 
 const iconMap: Record<string, React.ReactNode> = {
-  cog: <CogIcon className="w-6 h-6" />,
-  cpu: <CpuChipIcon className="w-6 h-6" />,
-  wrench: <WrenchScrewdriverIcon className="w-6 h-6" />,
-  bolt: <BoltIcon className="w-6 h-6" />,
-  fire: <FireIcon className="w-6 h-6" />,
-  truck: <TruckIcon className="w-6 h-6" />,
-  desktop: <ComputerDesktopIcon className="w-6 h-6" />,
-  cog6: <Cog6ToothIcon className="w-6 h-6" />,
-  shield: <ShieldCheckIcon className="w-6 h-6" />,
-  archive: <ArchiveBoxIcon className="w-6 h-6" />,
+  cog: <CogIcon className="w-7 h-7" />,
+  cpu: <CpuChipIcon className="w-7 h-7" />,
+  wrench: <WrenchScrewdriverIcon className="w-7 h-7" />,
+  bolt: <BoltIcon className="w-7 h-7" />,
+  fire: <FireIcon className="w-7 h-7" />,
+  truck: <TruckIcon className="w-7 h-7" />,
+  desktop: <ComputerDesktopIcon className="w-7 h-7" />,
+  cog6: <Cog6ToothIcon className="w-7 h-7" />,
+  shield: <ShieldCheckIcon className="w-7 h-7" />,
+  archive: <ArchiveBoxIcon className="w-7 h-7" />,
 }
 
 export default function Sectors() {
@@ -53,7 +53,7 @@ export default function Sectors() {
           {SECTORS.map((sector, i) => (
             <motion.div
               key={sector.id}
-              className="border border-white/10 p-5 flex flex-col items-start gap-4 group cursor-default relative overflow-hidden"
+              className="border border-white/10 p-4 sm:p-5 flex flex-col items-start gap-4 group cursor-default relative overflow-hidden min-h-[88px]"
               initial={{ opacity: 0, scale: 0.92 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-40px' }}

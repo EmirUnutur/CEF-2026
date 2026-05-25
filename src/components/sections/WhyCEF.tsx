@@ -33,7 +33,7 @@ export default function WhyCEF() {
           {WHY_CEF_ITEMS.map((item, i) => (
             <motion.div
               key={item.id}
-              className="bg-white border border-ivory-dark p-8 flex flex-col group cursor-default relative overflow-hidden"
+              className="bg-white border border-ivory-dark p-5 sm:p-8 flex flex-col group cursor-default relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}

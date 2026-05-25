@@ -29,7 +29,7 @@ function UnitCard({ value, label, index }: UnitCardProps) {
 
       <span
         className="font-display text-white relative z-10 leading-none"
-        style={{ fontSize: 'clamp(52px, 8vw, 96px)', letterSpacing: '0.02em' }}
+        style={{ fontSize: 'clamp(44px, 8vw, 96px)', letterSpacing: '0.02em' }}
       >
         {typeof value === 'number' ? PAD(value) : value}
       </span>

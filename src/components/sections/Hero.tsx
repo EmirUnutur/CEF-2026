@@ -69,7 +69,7 @@ export default function Hero() {
       <div
         className="absolute bottom-0 right-0 font-display leading-none select-none pointer-events-none overflow-hidden"
         style={{
-          fontSize: 'clamp(180px, 28vw, 420px)',
+          fontSize: 'clamp(120px, 28vw, 420px)',
           color: 'rgba(255,255,255,0.04)',
           lineHeight: 0.85,
           transform: 'translateY(15%)',

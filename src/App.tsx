@@ -1,5 +1,6 @@
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import MobileNav from './components/layout/MobileNav'
 import ScrollProgress from './components/ui/ScrollProgress'
 import BackToTop from './components/ui/BackToTop'
 import Hero from './components/sections/Hero'
@@ -38,6 +39,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <MobileNav />
     </>
   )
 }

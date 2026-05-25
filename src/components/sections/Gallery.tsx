@@ -164,7 +164,7 @@ export default function Gallery() {
             {/* Prev */}
             {lightboxIndex > 0 && (
               <button
-                className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-10"
+                className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-3 z-10"
                 onClick={(e) => { e.stopPropagation(); prev() }}
                 aria-label="Önceki"
               >
@@ -201,7 +201,7 @@ export default function Gallery() {
             {/* Next */}
             {lightboxIndex < filtered.length - 1 && (
               <button
-                className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-2 z-10"
+                className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-3 z-10"
                 onClick={(e) => { e.stopPropagation(); next() }}
                 aria-label="Sonraki"
               >

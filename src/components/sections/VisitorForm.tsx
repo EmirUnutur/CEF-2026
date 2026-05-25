@@ -51,7 +51,7 @@ function Field({
         placeholder={placeholder}
         required={required}
         autoComplete={type === 'email' ? 'email' : type === 'tel' ? 'tel' : 'off'}
-        className="font-sans text-sm text-navy-900 bg-white border border-ivory-deep px-4 py-3 outline-none focus:border-navy-700 transition-colors duration-200 placeholder:text-navy-300"
+        className="font-sans text-sm text-navy-900 bg-white border border-ivory-deep px-4 py-3.5 outline-none focus:border-navy-700 transition-colors duration-200 placeholder:text-navy-300"
       />
     </div>
   )
@@ -208,7 +208,7 @@ export default function VisitorForm() {
                         name="sectors"
                         value={form.sectors}
                         onChange={handleChange}
-                        className="font-sans text-sm text-navy-900 bg-white border border-ivory-deep px-4 py-3 outline-none focus:border-navy-700 transition-colors duration-200 appearance-none cursor-pointer"
+                        className="font-sans text-sm text-navy-900 bg-white border border-ivory-deep px-4 py-3.5 outline-none focus:border-navy-700 transition-colors duration-200 appearance-none cursor-pointer"
                       >
                         <option value="">Sektör seçin (opsiyonel)</option>
                         <option>Makine ve Ekipman</option>
