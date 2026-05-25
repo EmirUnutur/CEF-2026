@@ -99,7 +99,7 @@ export default function About() {
 
               {/* Floating edition badge */}
               <motion.div
-                className="absolute -bottom-5 -right-5 bg-crimson text-white px-6 py-4 shadow-2xl z-10"
+                className="absolute -bottom-5 right-0 sm:-right-5 bg-crimson text-white px-6 py-4 shadow-2xl z-10"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
