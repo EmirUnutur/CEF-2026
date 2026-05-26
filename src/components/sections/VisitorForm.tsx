@@ -91,7 +91,7 @@ export default function VisitorForm() {
   }
 
   return (
-    <section id="ziyaretci" className="bg-ivory ivory-grid py-20 sm:py-32">
+    <section id="ziyaretci" className="bg-ivory ivory-grid py-20 sm:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
