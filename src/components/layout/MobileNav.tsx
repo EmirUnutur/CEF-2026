@@ -6,7 +6,7 @@ export default function MobileNav() {
 
   const ITEMS = [
     { label: t.nav.items[0].label, Icon: HomeIcon, href: '#anasayfa', highlight: false },
-    { label: t.nav.visitorCta, Icon: UserPlusIcon, href: '#ziyaretci', highlight: true },
+    { label: t.nav.visitorCta, Icon: UserPlusIcon, href: '#ziyaretci-form', highlight: true },
     { label: t.nav.dropdown[0].label, Icon: PhotoIcon, href: '#galeri', highlight: false },
     { label: t.nav.dropdown[2].label, Icon: EnvelopeIcon, href: '#iletisim', highlight: false },
   ]

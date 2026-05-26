@@ -140,7 +140,7 @@ export default function VisitorForm() {
 
           {/* Right — form */}
           <ScrollReveal direction="right" delay={0.1}>
-            <div className="bg-white border border-ivory-dark p-8 sm:p-10 relative">
+            <div id="ziyaretci-form" className="bg-white border border-ivory-dark p-8 sm:p-10 relative scroll-mt-24">
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson" />
 
               <AnimatePresence mode="wait">
