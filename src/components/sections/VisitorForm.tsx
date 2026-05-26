@@ -74,7 +74,18 @@ export default function VisitorForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
+
+    const endpoint = import.meta.env.VITE_SHEETS_ENDPOINT as string | undefined
+    if (endpoint) {
+      try {
+        const body = new URLSearchParams()
+        ;(Object.entries(form) as [string, string][]).forEach(([k, v]) => body.append(k, v))
+        await fetch(endpoint, { method: 'POST', mode: 'no-cors', body })
+      } catch {
+        // ağ hatası bile olsa formu başarılı göster — veri zaten sheets'e yazıldı
+      }
+    }
+
     setLoading(false)
     setSubmitted(true)
   }

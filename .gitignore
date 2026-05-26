@@ -4,6 +4,10 @@
 # R statistics history
 .Rhistory
 
+# Environment variables (API keys, endpoints)
+.env
+.env.local
+
 # Development reference files
 references/
 
