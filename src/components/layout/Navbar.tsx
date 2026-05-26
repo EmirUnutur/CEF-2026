@@ -154,8 +154,8 @@ export default function Navbar() {
 
         {/* Right: Lang toggle + CTA + Hamburger */}
         <div className="flex items-center gap-2">
-          <LangToggle />
-          <div className="hidden sm:block">
+          <div className="hidden sm:flex"><LangToggle /></div>
+          <div>
             <Button variant={scrolled ? 'primary' : 'white-outline'} size="sm" href="#ziyaretci">
               {t.nav.visitorCta}
             </Button>
