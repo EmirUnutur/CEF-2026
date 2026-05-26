@@ -2,35 +2,39 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 import ScrollReveal from '../ui/ScrollReveal'
 import { SITE_CONFIG, SOCIAL_LINKS } from '../../data/content'
 import { SOCIAL_ICON_MAP } from '../ui/SocialIcons'
-
-const contactCards = [
-  {
-    icon: <EnvelopeIcon className="w-6 h-6" />,
-    label: 'E-posta',
-    value: SITE_CONFIG.email,
-    href: `mailto:${SITE_CONFIG.email}`,
-    external: false,
-    cta: 'İletişime Geç →',
-  },
-  {
-    icon: <PhoneIcon className="w-6 h-6" />,
-    label: 'Telefon',
-    value: SITE_CONFIG.phone,
-    href: `tel:${SITE_CONFIG.phone}`,
-    external: false,
-    cta: 'Hemen Ara →',
-  },
-  {
-    icon: <MapPinIcon className="w-6 h-6" />,
-    label: 'Adres',
-    value: SITE_CONFIG.address,
-    href: SITE_CONFIG.mapsDirectionsUrl,
-    external: true,
-    cta: 'Haritada Aç →',
-  },
-]
+import { useLang } from '../../contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLang()
+  const c = t.contact
+
+  const contactCards = [
+    {
+      icon: <EnvelopeIcon className="w-6 h-6" />,
+      label: c.cards.email.label,
+      value: SITE_CONFIG.email,
+      href: `mailto:${SITE_CONFIG.email}`,
+      external: false,
+      cta: c.cards.email.cta,
+    },
+    {
+      icon: <PhoneIcon className="w-6 h-6" />,
+      label: c.cards.phone.label,
+      value: SITE_CONFIG.phone,
+      href: `tel:${SITE_CONFIG.phone}`,
+      external: false,
+      cta: c.cards.phone.cta,
+    },
+    {
+      icon: <MapPinIcon className="w-6 h-6" />,
+      label: c.cards.address.label,
+      value: SITE_CONFIG.address,
+      href: SITE_CONFIG.mapsDirectionsUrl,
+      external: true,
+      cta: c.cards.address.cta,
+    },
+  ]
+
   return (
     <section id="iletisim" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -38,13 +42,13 @@ export default function Contact() {
         <ScrollReveal className="mb-14">
           <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center gap-2">
             <span className="inline-block w-8 h-px bg-current" />
-            Bize Ulaşın
+            {c.overline}
           </p>
           <h2
             className="font-display text-navy-900 leading-none"
             style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
           >
-            İLETİŞİM
+            {c.title}
           </h2>
         </ScrollReveal>
 
@@ -78,46 +82,53 @@ export default function Contact() {
 
         {/* Organizer info + social */}
         <ScrollReveal>
-          <div className="bg-navy-900 p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-            <div>
-              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-2">
-                Organizatör
-              </p>
-              <p className="font-display text-2xl text-white tracking-wide mb-1">
-                ÇERKEZKÖY TSO
-              </p>
-              <p className="font-sans text-sm text-white/55">
-                Çerkezköy Ticaret ve Sanayi Odası
-              </p>
-            </div>
+          <div className="relative bg-navy-900 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson" aria-hidden="true" />
+            <div className="industrial-grid absolute inset-0 opacity-40" aria-hidden="true" />
 
-            <div>
-              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-3">
-                Sosyal Medya
-              </p>
-              <div className="flex gap-3" role="list" aria-label="Sosyal medya bağlantıları">
-                {SOCIAL_LINKS.map((s) => {
-                  const Icon = SOCIAL_ICON_MAP[s.icon]
-                  const isPlaceholder = s.href === '#'
-                  return (
-                    <a
-                      key={s.icon}
-                      href={isPlaceholder ? undefined : s.href}
-                      role="listitem"
-                      aria-label={s.label}
-                      target={isPlaceholder ? undefined : '_blank'}
-                      rel={isPlaceholder ? undefined : 'noopener noreferrer'}
-                      onClick={isPlaceholder ? (e) => e.preventDefault() : undefined}
-                      className={`w-10 h-10 flex items-center justify-center border transition-colors duration-200 ${
-                        isPlaceholder
-                          ? 'border-white/10 text-white/20 cursor-not-allowed'
-                          : 'border-white/20 text-white/50 hover:border-crimson hover:text-crimson cursor-pointer'
-                      }`}
-                    >
-                      {Icon && <Icon />}
-                    </a>
-                  )
-                })}
+            <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6 px-8 sm:px-12 py-8">
+              <div className="flex flex-col items-start gap-2">
+                <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-1">
+                  {c.organizer}
+                </p>
+                <p className="font-display text-2xl text-white tracking-wide mb-0.5">
+                  ÇERKEZKÖY TSO
+                </p>
+                <p className="font-sans text-sm text-white/55">
+                  {c.orgFull}
+                </p>
+              </div>
+
+              <div className="hidden sm:block w-px self-stretch my-2 bg-white/10" aria-hidden="true" />
+
+              <div className="flex flex-col items-start sm:items-end gap-2">
+                <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/35">
+                  {c.social}
+                </p>
+                <div className="flex gap-2.5" role="list" aria-label={c.social}>
+                  {SOCIAL_LINKS.map((s) => {
+                    const Icon = SOCIAL_ICON_MAP[s.icon]
+                    const isPlaceholder = s.href === '#'
+                    return (
+                      <a
+                        key={s.icon}
+                        href={isPlaceholder ? undefined : s.href}
+                        role="listitem"
+                        aria-label={s.label}
+                        target={isPlaceholder ? undefined : '_blank'}
+                        rel={isPlaceholder ? undefined : 'noopener noreferrer'}
+                        onClick={isPlaceholder ? (e) => e.preventDefault() : undefined}
+                        className={`w-9 h-9 flex items-center justify-center border transition-colors duration-200 ${
+                          isPlaceholder
+                            ? 'border-white/10 text-white/20 cursor-not-allowed'
+                            : 'border-white/20 text-white/50 hover:border-crimson hover:text-crimson cursor-pointer'
+                        }`}
+                      >
+                        {Icon && <Icon />}
+                      </a>
+                    )
+                  })}
+                </div>
               </div>
             </div>
           </div>

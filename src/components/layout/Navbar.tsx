@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import { NAV_ITEMS, HAKKINDA_DROPDOWN } from '../../data/content'
 import Button from '../ui/Button'
+import { useLang } from '../../contexts/LanguageContext'
+import type { Lang } from '../../i18n/translations'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -10,6 +11,7 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const { lang, setLang, t } = useLang()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -24,6 +26,34 @@ export default function Navbar() {
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
+
+  const LangToggle = ({ mobile = false }: { mobile?: boolean }) => (
+    <div className={`flex items-center gap-0 ${mobile ? '' : 'ml-2'}`}>
+      {(['tr', 'en'] as Lang[]).map((l, i) => (
+        <span key={l} className="flex items-center">
+          {i > 0 && (
+            <span className={`text-[10px] leading-none select-none ${
+              mobile ? 'text-navy-300' : scrolled ? 'text-navy-300' : 'text-white/20'
+            }`}>|</span>
+          )}
+          <button
+            onClick={() => setLang(l)}
+            className={`font-sans text-[11px] font-bold tracking-[0.12em] px-2 py-1 transition-colors duration-200 ${
+              lang === l
+                ? 'text-crimson'
+                : mobile
+                  ? 'text-navy-400 hover:text-crimson'
+                  : scrolled
+                    ? 'text-navy-400 hover:text-crimson'
+                    : 'text-white/40 hover:text-white/70'
+            }`}
+          >
+            {l.toUpperCase()}
+          </button>
+        </span>
+      ))}
+    </div>
+  )
 
   return (
     <motion.header
@@ -42,29 +72,23 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <a href="#anasayfa" className="flex items-center gap-2 group" aria-label="ÇEF — Çerkezköy Endüstriyel Fuarı Ana Sayfa">
-          <span
-            className={`font-display text-3xl tracking-widest leading-none transition-colors duration-300 ${
-              scrolled ? 'text-navy-900' : 'text-white'
-            }`}
-          >
-            ÇEF
-          </span>
-          <div className="flex flex-col leading-none">
-            <span
-              className={`font-sans text-[10px] font-semibold tracking-[0.25em] uppercase transition-colors duration-300 ${
-                scrolled ? 'text-navy-600' : 'text-white/60'
-              }`}
-            >
-              2026
-            </span>
-            <span className="w-full h-0.5 bg-crimson mt-0.5" />
-          </div>
+        <a href="#anasayfa" aria-label="ÇEF — Çerkezköy Endüstriyel Fuarı Ana Sayfa">
+          <img
+            src="/images/cef.png"
+            alt="Çerkezköy Ticaret ve Sanayi Odası"
+            draggable={false}
+            className="block w-auto transition-all duration-300"
+            style={{
+              height: scrolled ? '52px' : '58px',
+              mixBlendMode: scrolled ? 'multiply' : 'normal',
+              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+            }}
+          />
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {NAV_ITEMS.map((item) => (
+          {t.nav.items.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -91,7 +115,7 @@ export default function Navbar() {
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
             >
-              Hakkında
+              {t.nav.about}
               <ChevronDownIcon
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
               />
@@ -107,7 +131,7 @@ export default function Navbar() {
                   transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute top-full left-0 mt-1 bg-white border border-ivory-dark shadow-xl min-w-[200px] py-2 z-50"
                 >
-                  {HAKKINDA_DROPDOWN.map((item) => (
+                  {t.nav.dropdown.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
@@ -128,11 +152,12 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Right: CTA + Hamburger */}
-        <div className="flex items-center gap-3">
+        {/* Right: Lang toggle + CTA + Hamburger */}
+        <div className="flex items-center gap-2">
+          <LangToggle />
           <div className="hidden sm:block">
             <Button variant={scrolled ? 'primary' : 'white-outline'} size="sm" href="#ziyaretci">
-              Ziyaretçi Kayıt
+              {t.nav.visitorCta}
             </Button>
           </div>
           <button
@@ -159,7 +184,7 @@ export default function Navbar() {
             className="lg:hidden overflow-hidden bg-ivory border-t border-ivory-dark"
           >
             <nav className="max-w-7xl mx-auto px-5 py-4 flex flex-col">
-              {NAV_ITEMS.map((item, i) => (
+              {t.nav.items.map((item, i) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
@@ -177,14 +202,14 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: NAV_ITEMS.length * 0.04, duration: 0.3 }}
+                transition={{ delay: t.nav.items.length * 0.04, duration: 0.3 }}
                 className="border-b border-ivory-dark"
               >
                 <button
                   onClick={() => setMobileDropdownOpen((v) => !v)}
                   className="flex items-center justify-between w-full font-sans text-sm font-medium text-navy-700 py-3 hover:text-crimson transition-colors duration-150"
                 >
-                  Hakkında
+                  {t.nav.about}
                   <ChevronDownIcon
                     className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen ? 'rotate-180' : ''}`}
                   />
@@ -198,7 +223,7 @@ export default function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      {HAKKINDA_DROPDOWN.map((item) => (
+                      {t.nav.dropdown.map((item) => (
                         <a
                           key={item.href}
                           href={item.href}
@@ -215,10 +240,11 @@ export default function Navbar() {
                 </AnimatePresence>
               </motion.div>
 
-              <div className="pt-4">
-                <Button variant="primary" size="md" className="w-full" href="#ziyaretci">
-                  Ziyaretçi Kayıt
+              <div className="pt-4 flex items-center gap-3">
+                <Button variant="primary" size="md" className="flex-1 justify-center" href="#ziyaretci" onClick={() => setMobileOpen(false)}>
+                  {t.nav.visitorCta}
                 </Button>
+                <LangToggle mobile />
               </div>
             </nav>
           </motion.div>

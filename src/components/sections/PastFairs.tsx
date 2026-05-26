@@ -4,9 +4,11 @@ import { ArrowRightIcon, ArrowLeftIcon, ChevronRightIcon } from '@heroicons/reac
 import ScrollReveal from '../ui/ScrollReveal'
 import Button from '../ui/Button'
 import { PAST_FAIRS } from '../../data/content'
+import { useLang } from '../../contexts/LanguageContext'
 
 export default function PastFairs() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const { t } = useLang()
 
   const scroll = (dir: 'left' | 'right') => {
     const el = scrollRef.current
@@ -22,44 +24,39 @@ export default function PastFairs() {
           <div>
             <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center gap-2">
               <span className="inline-block w-8 h-px bg-current" />
-              Fuar Arşivi
+              {t.pastFairs.overline}
             </p>
             <h2
               className="font-display text-navy-900 leading-none"
               style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
             >
-              GEÇMİŞ FUARLAR
+              {t.pastFairs.title}
             </h2>
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Arrow buttons */}
             <button
               onClick={() => scroll('left')}
-              aria-label="Önceki"
+              aria-label={t.pastFairs.prev}
               className="w-10 h-10 flex items-center justify-center border border-ivory-deep text-navy-600 hover:border-navy-700 hover:text-navy-900 transition-colors duration-200"
             >
               <ArrowLeftIcon className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              aria-label="Sonraki"
+              aria-label={t.pastFairs.next}
               className="w-10 h-10 flex items-center justify-center border border-ivory-deep text-navy-600 hover:border-navy-700 hover:text-navy-900 transition-colors duration-200"
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
             <Button variant="outline" size="md" href="#galeri">
-              Tüm Galeri
+              {t.pastFairs.allGallery}
               <ArrowRightIcon className="w-4 h-4" />
             </Button>
           </div>
         </ScrollReveal>
 
-        {/* Scroll wrapper — negative margin so cards bleed to edge on mobile */}
         <div className="relative">
-          {/* Right fade hint */}
-          <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-ivory to-transparent pointer-events-none z-10" />
-
           <div
             ref={scrollRef}
             className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory -mx-5 sm:-mx-8 px-5 sm:px-8"
@@ -68,12 +65,11 @@ export default function PastFairs() {
             {PAST_FAIRS.map((fair, i) => (
               <motion.div
                 key={fair.year}
-                className="flex-none w-64 sm:w-72 snap-start group cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
+                className="flex-none w-64 sm:w-72 snap-start group cursor-pointer transition-transform duration-300 hover:-translate-y-1.5"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
               >
                 {/* Image area */}
                 <div className="relative aspect-[4/3] overflow-hidden mb-3 bg-navy-800">
@@ -106,7 +102,7 @@ export default function PastFairs() {
                     {fair.label}
                   </p>
                   <span className="font-sans text-xs text-navy-500 tracking-wide">
-                    Arşiv
+                    {t.pastFairs.archive}
                   </span>
                 </div>
               </motion.div>

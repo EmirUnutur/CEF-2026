@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useCountdown } from '../../hooks/useCountdown'
 import Button from '../ui/Button'
 import { SITE_CONFIG } from '../../data/content'
+import { useLang } from '../../contexts/LanguageContext'
 
 const PAD = (n: number) => String(n).padStart(2, '0')
 
@@ -20,11 +21,8 @@ function UnitCard({ value, label, index }: UnitCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Background grid */}
       <div className="industrial-grid absolute inset-0 opacity-60" aria-hidden="true" />
-      {/* Crimson top accent */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson" />
-      {/* Hover glow */}
       <div className="absolute inset-0 bg-crimson/0 group-hover:bg-crimson/5 transition-colors duration-300" />
 
       <span
@@ -42,11 +40,11 @@ function UnitCard({ value, label, index }: UnitCardProps) {
 
 export default function Countdown() {
   const time = useCountdown(SITE_CONFIG.targetDate)
+  const { t } = useLang()
 
   return (
     <section id="geri-sayim" className="bg-ivory ivory-grid py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        {/* Heading */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 24 }}
@@ -63,32 +61,30 @@ export default function Countdown() {
             className="font-display text-navy-900 leading-none"
             style={{ fontSize: 'clamp(40px, 7vw, 80px)' }}
           >
-            FUARA KALAN SÜRE
+            {t.countdown.title}
           </h2>
           <p className="font-sans text-sm text-navy-600 mt-3 tracking-wide">
-            {SITE_CONFIG.dates} · {SITE_CONFIG.venue}
+            {t.dates} · {SITE_CONFIG.venue}
           </p>
         </motion.div>
 
-        {/* Countdown cards */}
         {time.isExpired ? (
           <motion.p
             className="text-center font-display text-4xl text-crimson"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            FUAR BAŞLADI!
+            {t.countdown.expired}
           </motion.p>
         ) : (
           <div className="flex gap-3 sm:gap-4">
-            <UnitCard value={time.days} label="Gün" index={0} />
-            <UnitCard value={time.hours} label="Saat" index={1} />
-            <UnitCard value={time.minutes} label="Dakika" index={2} />
-            <UnitCard value={time.seconds} label="Saniye" index={3} />
+            <UnitCard value={time.days}    label={t.countdown.labels[0]} index={0} />
+            <UnitCard value={time.hours}   label={t.countdown.labels[1]} index={1} />
+            <UnitCard value={time.minutes} label={t.countdown.labels[2]} index={2} />
+            <UnitCard value={time.seconds} label={t.countdown.labels[3]} index={3} />
           </div>
         )}
 
-        {/* CTAs */}
         <motion.div
           className="flex flex-wrap gap-4 justify-center mt-12"
           initial={{ opacity: 0, y: 20 }}
@@ -97,10 +93,10 @@ export default function Countdown() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Button variant="primary" size="lg" href="#ziyaretci">
-            Ziyaretçi Kaydı Yap
+            {t.countdown.visitorBtn}
           </Button>
           <Button variant="outline" size="lg" href="#katilim">
-            Katılımcı Bilgisi Al
+            {t.countdown.exhibitorBtn}
           </Button>
         </motion.div>
       </div>

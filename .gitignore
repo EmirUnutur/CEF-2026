@@ -1,6 +1,9 @@
 # Claude Code internal files
 .claude/
 
+# R statistics history
+.Rhistory
+
 # Development reference files
 references/
 

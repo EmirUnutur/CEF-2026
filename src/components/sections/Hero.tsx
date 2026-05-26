@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import Button from '../ui/Button'
 import { SITE_CONFIG } from '../../data/content'
+import { useLang } from '../../contexts/LanguageContext'
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -10,6 +11,7 @@ export default function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '12%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const { t } = useLang()
 
   const containerVariants = {
     hidden: {},
@@ -32,7 +34,6 @@ export default function Hero() {
         className="absolute inset-0"
         style={{ y: bgY }}
       >
-        {/* Gradient fallback (video yüklenemezse görünür) */}
         <div
           className="absolute inset-0"
           style={{
@@ -41,7 +42,6 @@ export default function Hero() {
           }}
           aria-hidden="true"
         />
-        {/* Video background */}
         <video
           autoPlay
           muted
@@ -52,14 +52,12 @@ export default function Hero() {
         >
           <source src="/videos/fuar-video.mp4" type="video/mp4" />
         </video>
-        {/* Industrial grid overlay */}
-        <div className="industrial-grid absolute inset-0 opacity-100" aria-hidden="true" />
-        {/* Gradient overlay for readability */}
+        <div className="industrial-grid absolute inset-0 opacity-40" aria-hidden="true" />
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to right, rgba(6,14,30,0.85) 0%, rgba(6,14,30,0.55) 60%, rgba(6,14,30,0.3) 100%)',
+              'linear-gradient(to top, rgba(6,14,30,0.88) 0%, rgba(6,14,30,0.35) 30%, rgba(6,14,30,0.0) 60%), linear-gradient(to right, rgba(6,14,30,0.55) 0%, rgba(6,14,30,0.1) 40%, rgba(6,14,30,0.0) 100%)',
           }}
           aria-hidden="true"
         />
@@ -80,19 +78,19 @@ export default function Hero() {
       </div>
 
       {/* Crimson left accent line */}
-      <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-crimson/60" aria-hidden="true" />
+      <div className="absolute left-0 top-1/3 bottom-24 w-1 bg-crimson/60" aria-hidden="true" />
 
       {/* Content */}
       <motion.div
-        className="relative z-10 flex-1 flex items-center"
+        className="relative z-10 flex-1 flex items-end"
         style={{ y: contentY, opacity }}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-28 pb-20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-28 pb-40">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-4xl"
+            className="max-w-xl"
           >
             {/* Overline */}
             <motion.p
@@ -100,8 +98,7 @@ export default function Hero() {
               className="font-sans text-xs font-semibold tracking-[0.25em] uppercase text-white/50 mb-6 flex items-center gap-3"
             >
               <span className="inline-block w-8 h-px bg-crimson" />
-              Çerkezköy Endüstriyel Fuarı — {SITE_CONFIG.edition}. Edisyon
-              <span className="inline-block w-8 h-px bg-crimson" />
+              {t.hero.edition(SITE_CONFIG.edition)}
             </motion.p>
 
             {/* Main Title */}
@@ -114,11 +111,11 @@ export default function Hero() {
                 letterSpacing: '0.02em',
               }}
             >
-              TRAKYA'NIN
+              {t.hero.titleLines[0]}
               <br />
-              <span className="text-crimson">SANAYİ</span>
+              <span className="text-crimson">{t.hero.titleLines[1]}</span>
               <br />
-              GÜCÜ
+              {t.hero.titleLines[2]}
             </motion.h1>
 
             {/* Divider */}
@@ -133,7 +130,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
               <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
-                {SITE_CONFIG.dates}
+                {t.dates}
               </span>
               <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
@@ -144,10 +141,10 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
               <Button variant="primary" size="lg" href="#ziyaretci">
-                Ziyaretçi Kayıt
+                {t.hero.visitorBtn}
               </Button>
               <Button variant="white-outline" size="lg" href="#katilim">
-                Katılımcı Ol →
+                {t.hero.exhibitorBtn}
               </Button>
             </motion.div>
           </motion.div>
@@ -163,7 +160,7 @@ export default function Hero() {
         style={{ opacity }}
       >
         <span className="font-sans text-xs tracking-[0.2em] uppercase text-white/40">
-          Keşfet
+          {t.hero.scroll}
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}

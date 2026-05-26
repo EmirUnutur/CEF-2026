@@ -25,7 +25,6 @@ export const NAV_ITEMS = [
   { label: 'Ana Sayfa', href: '#anasayfa' },
   { label: 'Neden ÇEF?', href: '#neden-cef' },
   { label: 'Sektörler', href: '#sektorler' },
-  { label: 'Katılımcı', href: '#katilim' },
   { label: 'Ziyaretçi', href: '#ziyaretci' },
   { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
 ]

@@ -1,10 +1,12 @@
 import { SITE_CONFIG, FOOTER_LINKS, SOCIAL_LINKS } from '../../data/content'
 import { SOCIAL_ICON_MAP } from '../ui/SocialIcons'
+import { useLang } from '../../contexts/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLang()
+
   return (
     <footer className="bg-navy-950 text-white">
-      {/* Main footer */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
@@ -22,7 +24,7 @@ export default function Footer() {
               {SITE_CONFIG.slogan}
             </p>
             <p className="font-sans text-sm text-white/40 leading-relaxed">
-              {SITE_CONFIG.dates}
+              {t.dates}
               <br />
               {SITE_CONFIG.venue}
             </p>
@@ -52,7 +54,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">
-              İletişim
+              {t.footer.contactHeading}
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
@@ -78,8 +80,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            {/* Social */}
-            <div className="flex gap-3 mt-6" role="list" aria-label="Sosyal medya">
+            <div className="flex gap-3 mt-6" role="list" aria-label={t.contact.social}>
               {SOCIAL_LINKS.map((s) => {
                 const Icon = SOCIAL_ICON_MAP[s.icon]
                 const isPlaceholder = s.href === '#'
@@ -111,7 +112,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-sans text-xs text-white/30">
-            © {new Date().getFullYear()} {SITE_CONFIG.name}. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. {t.footer.copyright}
           </p>
           <p className="font-sans text-xs text-white/20">
             {SITE_CONFIG.city}

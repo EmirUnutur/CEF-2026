@@ -1,3 +1,4 @@
+import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import MobileNav from './components/layout/MobileNav'
@@ -16,14 +17,16 @@ import Gallery from './components/sections/Gallery'
 import Location from './components/sections/Location'
 import CTASection from './components/sections/CTASection'
 import Contact from './components/sections/Contact'
+import OrganizerBanner from './components/sections/OrganizerBanner'
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
+        <OrganizerBanner />
         <Countdown />
         <About />
         <WhyCEF />
@@ -40,6 +43,6 @@ export default function App() {
       <Footer />
       <BackToTop />
       <MobileNav />
-    </>
+    </LanguageProvider>
   )
 }

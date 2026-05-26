@@ -14,6 +14,7 @@ import {
 import ScrollReveal from '../ui/ScrollReveal'
 import SectionTitle from '../ui/SectionTitle'
 import { SECTORS } from '../../data/content'
+import { useLang } from '../../contexts/LanguageContext'
 
 const iconMap: Record<string, React.ReactNode> = {
   cog: <CogIcon className="w-7 h-7" />,
@@ -29,9 +30,10 @@ const iconMap: Record<string, React.ReactNode> = {
 }
 
 export default function Sectors() {
+  const { t } = useLang()
+
   return (
     <section id="sektorler" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
-      {/* Background accent */}
       <div
         className="absolute right-0 top-0 bottom-0 w-1 bg-crimson/40"
         aria-hidden="true"
@@ -41,9 +43,9 @@ export default function Sectors() {
 
         <ScrollReveal className="mb-16">
           <SectionTitle
-            overline="Katılım Sektörleri"
-            title="FUARDA YER ALAN SEKTÖRLER"
-            subtitle="Trakya'nın sanayi ekosistemini oluşturan 10 temel sektör ÇEF 2026'da buluşuyor."
+            overline={t.sectors.overline}
+            title={t.sectors.title}
+            subtitle={t.sectors.subtitle}
             light
             align="center"
           />
@@ -60,19 +62,16 @@ export default function Sectors() {
               transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ borderColor: 'rgba(196, 30, 58, 0.6)', y: -4 }}
             >
-              {/* Background fill on hover */}
               <div className="absolute inset-0 bg-crimson/0 group-hover:bg-crimson/8 transition-colors duration-300" />
-              {/* Top crimson line on hover */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
               <div className="relative z-10 text-white/50 group-hover:text-crimson transition-colors duration-300">
                 {iconMap[sector.icon]}
               </div>
               <p className="relative z-10 font-sans text-sm font-medium text-white/70 group-hover:text-white leading-tight transition-colors duration-300">
-                {sector.name}
+                {t.sectors.names[i]}
               </p>
 
-              {/* Index number */}
               <span className="absolute bottom-3 right-3 font-display text-3xl text-white/5 group-hover:text-white/10 leading-none transition-colors duration-300">
                 {String(i + 1).padStart(2, '0')}
               </span>

@@ -4,6 +4,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline'
 import ScrollReveal from '../ui/ScrollReveal'
 import Button from '../ui/Button'
 import { SITE_CONFIG } from '../../data/content'
+import { useLang } from '../../contexts/LanguageContext'
 
 interface FormData {
   name: string
@@ -24,6 +25,7 @@ function Field({
   onChange,
   required = false,
   placeholder,
+  requiredText,
 }: {
   label: string
   name: keyof FormData
@@ -32,6 +34,7 @@ function Field({
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
   required?: boolean
   placeholder?: string
+  requiredText?: string
 }) {
   return (
     <div className="flex flex-col gap-1.5">
@@ -40,7 +43,7 @@ function Field({
         className="font-sans text-xs font-semibold tracking-[0.12em] uppercase text-navy-600"
       >
         {label} {required && <span className="text-crimson" aria-hidden="true">*</span>}
-        {required && <span className="sr-only">(zorunlu)</span>}
+        {required && <span className="sr-only">({requiredText})</span>}
       </label>
       <input
         id={name}
@@ -61,6 +64,8 @@ export default function VisitorForm() {
   const [form, setForm] = useState<FormData>(INITIAL)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const { t } = useLang()
+  const f = t.form
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -69,8 +74,6 @@ export default function VisitorForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // TODO: Replace with actual form submission endpoint
-    // Example: await fetch('/api/register', { method: 'POST', body: JSON.stringify(form) })
     await new Promise((r) => setTimeout(r, 1200))
     setLoading(false)
     setSubmitted(true)
@@ -86,33 +89,26 @@ export default function VisitorForm() {
             <div className="lg:sticky lg:top-28">
               <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-4 flex items-center gap-2">
                 <span className="inline-block w-8 h-px bg-current" />
-                Ziyaretçi Kaydı
+                {f.overline}
               </p>
 
               <h2
                 className="font-display text-navy-900 leading-none mb-6"
                 style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
               >
-                FUARI<br />ZİYARET<br />EDİN
+                {f.titleLines[0]}<br />
+                {f.titleLines[1]}<br />
+                {f.titleLines[2]}
               </h2>
 
               <div className="w-12 h-1 bg-crimson mb-8" />
 
               <p className="font-sans text-base text-navy-600 leading-relaxed mb-8">
-                {SITE_CONFIG.dates} tarihlerinde gerçekleşecek olan{' '}
-                <strong className="text-navy-900">Çerkezköy Endüstriyel Fuarı 2026</strong>'yı
-                ziyaret etmek için kaydınızı oluşturun. Kayıt ücretsizdir.
+                {f.desc(t.dates)}
               </p>
 
-              {/* Benefits */}
               <ul className="flex flex-col gap-4">
-                {[
-                  'Tüm fuara ücretsiz giriş',
-                  '100+ katılımcı firma',
-                  'Konferans ve seminer programı',
-                  'B2B görüşme imkânı',
-                  'Dijital fuar kataloğu',
-                ].map((item) => (
+                {f.benefits.map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="w-5 h-5 rounded-full bg-crimson/10 border border-crimson/30 flex items-center justify-center flex-shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
@@ -122,10 +118,9 @@ export default function VisitorForm() {
                 ))}
               </ul>
 
-              {/* Date badge */}
               <div className="mt-10 border-l-2 border-crimson pl-5">
                 <p className="font-display text-2xl text-navy-900 tracking-wide">
-                  {SITE_CONFIG.dates}
+                  {t.dates}
                 </p>
                 <p className="font-sans text-sm text-navy-500 mt-1">{SITE_CONFIG.venue}</p>
               </div>
@@ -135,7 +130,6 @@ export default function VisitorForm() {
           {/* Right — form */}
           <ScrollReveal direction="right" delay={0.1}>
             <div className="bg-white border border-ivory-dark p-8 sm:p-10 relative">
-              {/* Top crimson line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson" />
 
               <AnimatePresence mode="wait">
@@ -151,19 +145,18 @@ export default function VisitorForm() {
                     <div className="w-16 h-16 rounded-full bg-green-50 border-2 border-green-500 flex items-center justify-center">
                       <CheckCircleIcon className="w-8 h-8 text-green-500" />
                     </div>
-                    <h3 className="font-display text-3xl text-navy-900 tracking-wide">KAYIT ALINDI</h3>
+                    <h3 className="font-display text-3xl text-navy-900 tracking-wide">{f.successTitle}</h3>
                     <p className="font-sans text-sm text-navy-600 leading-relaxed max-w-sm">
-                      Kaydınız başarıyla alınmıştır. Onay bilgileri kısa süre içinde{' '}
-                      <strong>{form.email}</strong> adresine gönderilecektir.
+                      {f.successDesc(form.email)}
                     </p>
                     <p className="font-sans text-xs text-navy-400">
-                      {SITE_CONFIG.dates} · {SITE_CONFIG.venue}
+                      {t.dates} · {SITE_CONFIG.venue}
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setForm(INITIAL) }}
                       className="font-sans text-sm text-crimson hover:underline mt-2"
                     >
-                      Yeni kayıt oluştur →
+                      {f.newReg}
                     </button>
                   </motion.div>
                 ) : (
@@ -177,31 +170,31 @@ export default function VisitorForm() {
                   >
                     <div className="mb-2">
                       <h3 className="font-display text-2xl text-navy-900 tracking-wide mb-1">
-                        ZİYARETÇİ KAYIT FORMU
+                        {f.formTitle}
                       </h3>
                       <p className="font-sans text-xs text-navy-500">
-                        Ücretsiz · {SITE_CONFIG.dates}
+                        {f.free(t.dates)}
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <Field label="Ad Soyad" name="name" value={form.name} onChange={handleChange} required placeholder="Adınız Soyadınız" />
-                      <Field label="E-posta" name="email" type="email" value={form.email} onChange={handleChange} required placeholder="ornek@firma.com" />
+                      <Field label={f.name} name="name" value={form.name} onChange={handleChange} required placeholder={f.namePh} requiredText={f.required} />
+                      <Field label={f.email} name="email" type="email" value={form.email} onChange={handleChange} required placeholder={f.emailPh} requiredText={f.required} />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <Field label="Telefon" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+90 5XX XXX XX XX" />
-                      <Field label="Firma / Kurum" name="company" value={form.company} onChange={handleChange} placeholder="Firma Adı" />
+                      <Field label={f.phone} name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder={f.phonePh} />
+                      <Field label={f.company} name="company" value={form.company} onChange={handleChange} placeholder={f.companyPh} />
                     </div>
 
-                    <Field label="Unvan / Görev" name="role" value={form.role} onChange={handleChange} placeholder="Satın Alma Müdürü, Mühendis, vb." />
+                    <Field label={f.role} name="role" value={form.role} onChange={handleChange} placeholder={f.rolePh} />
 
                     <div className="flex flex-col gap-1.5">
                       <label
                         htmlFor="sectors"
                         className="font-sans text-xs font-semibold tracking-[0.12em] uppercase text-navy-600"
                       >
-                        İlgilendiğiniz Sektörler
+                        {f.sectors}
                       </label>
                       <select
                         id="sectors"
@@ -210,18 +203,10 @@ export default function VisitorForm() {
                         onChange={handleChange}
                         className="font-sans text-sm text-navy-900 bg-white border border-ivory-deep px-4 py-3.5 outline-none focus:border-navy-700 transition-colors duration-200 appearance-none cursor-pointer"
                       >
-                        <option value="">Sektör seçin (opsiyonel)</option>
-                        <option>Makine ve Ekipman</option>
-                        <option>Otomasyon ve Robotik</option>
-                        <option>Metal ve Yan Sanayi</option>
-                        <option>Elektrik ve Elektronik</option>
-                        <option>Enerji Sistemleri</option>
-                        <option>Lojistik ve Depolama</option>
-                        <option>Endüstriyel Yazılım</option>
-                        <option>Üretim Teknolojileri</option>
-                        <option>İş Güvenliği</option>
-                        <option>Ambalaj ve Paketleme</option>
-                        <option>Genel / Tümü</option>
+                        <option value="">{f.sectorsPh}</option>
+                        {f.sectorOptions.map((opt) => (
+                          <option key={opt}>{opt}</option>
+                        ))}
                       </select>
                     </div>
 
@@ -233,10 +218,10 @@ export default function VisitorForm() {
                         className="w-full justify-center"
                         disabled={loading}
                       >
-                        {loading ? 'Gönderiliyor...' : 'Kaydı Tamamla →'}
+                        {loading ? f.submitting : f.submit}
                       </Button>
                       <p className="font-sans text-xs text-navy-400 text-center mt-3">
-                        Kişisel verileriniz yalnızca fuar organizasyonu kapsamında kullanılır.
+                        {f.privacy}
                       </p>
                     </div>
                   </motion.form>

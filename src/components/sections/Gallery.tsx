@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import ScrollReveal from '../ui/ScrollReveal'
+import { useLang } from '../../contexts/LanguageContext'
 
-// All available gallery photos mapped from /public/images/gallery/
 const GALLERY_ITEMS = [
   { id: 1,  src: '/images/gallery/2025.jpg',                          alt: 'ÇEF 2025 — Fuar Alanı',        label: 'Fuar Alanı',    year: '2025' },
   { id: 2,  src: '/images/gallery/2025.2.jpg',                        alt: 'ÇEF 2025 — Katılımcılar',      label: 'Katılımcılar',  year: '2025' },
@@ -26,13 +26,14 @@ const GALLERY_ITEMS = [
   { id: 19, src: '/images/gallery/2017.jpg',                          alt: 'ÇEF 2017 — İlk Edisyon',      label: 'İlk Edisyon',   year: '2017' },
 ]
 
-const YEARS = ['Tümü', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017']
+const YEARS = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017']
 
 export default function Gallery() {
-  const [activeYear, setActiveYear] = useState('Tümü')
+  const [activeYear, setActiveYear] = useState<string | null>(null)
   const [lightbox, setLightbox] = useState<number | null>(null)
+  const { t } = useLang()
 
-  const filtered = activeYear === 'Tümü'
+  const filtered = activeYear === null
     ? GALLERY_ITEMS
     : GALLERY_ITEMS.filter((g) => g.year === activeYear)
 
@@ -60,19 +61,30 @@ export default function Gallery() {
             <div>
               <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center gap-2">
                 <span className="inline-block w-8 h-px bg-current" />
-                Fotoğraf Arşivi
+                {t.gallery.overline}
               </p>
               <h2
                 className="font-display text-navy-900 leading-none"
                 style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
               >
-                GALERİ
+                {t.gallery.title}
               </h2>
             </div>
 
-            {/* Year filter — horizontal scroll on mobile */}
+            {/* Year filter */}
             <div className="flex gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-wrap sm:justify-end"
               style={{ scrollbarWidth: 'none' }}>
+              <button
+                onClick={() => setActiveYear(null)}
+                aria-pressed={activeYear === null}
+                className={`flex-none font-sans text-xs font-semibold tracking-[0.15em] uppercase px-4 py-2.5 border transition-all duration-200 ${
+                  activeYear === null
+                    ? 'bg-navy-900 text-white border-navy-900'
+                    : 'bg-transparent text-navy-600 border-ivory-deep hover:border-navy-700 hover:text-navy-900'
+                }`}
+              >
+                {t.gallery.all}
+              </button>
               {YEARS.map((year) => (
                 <button
                   key={year}
@@ -111,14 +123,8 @@ export default function Gallery() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/45 transition-colors duration-300" />
-
-                {/* Top crimson line on hover */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-
-                {/* Label on hover */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-navy-950/80 to-transparent pt-8">
                   <p className="font-display text-white text-base leading-tight tracking-wide">{item.label}</p>
                   <p className="font-sans text-white/60 text-xs">ÇEF {item.year}</p>
@@ -130,12 +136,12 @@ export default function Gallery() {
 
         {filtered.length === 0 && (
           <p className="text-center font-sans text-sm text-navy-400 py-16">
-            Bu yıl için görsel bulunamadı.
+            {t.gallery.noPhotos}
           </p>
         )}
 
         <p className="font-sans text-xs text-navy-400 text-center mt-6">
-          Görsellere tıklayarak tam ekranda görüntüleyebilirsiniz
+          {t.gallery.hint}
         </p>
       </div>
 
@@ -152,27 +158,24 @@ export default function Gallery() {
             onKeyDown={handleKeyDown}
             tabIndex={-1}
           >
-            {/* Close */}
             <button
               className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors z-10 p-2"
               onClick={() => setLightbox(null)}
-              aria-label="Kapat (Esc)"
+              aria-label={t.gallery.close}
             >
               <XMarkIcon className="w-7 h-7" />
             </button>
 
-            {/* Prev */}
             {lightboxIndex > 0 && (
               <button
                 className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-3 z-10"
                 onClick={(e) => { e.stopPropagation(); prev() }}
-                aria-label="Önceki"
+                aria-label={t.gallery.prev}
               >
                 <ArrowLeftIcon className="w-7 h-7" />
               </button>
             )}
 
-            {/* Image */}
             <motion.div
               key={lightbox}
               initial={{ opacity: 0, scale: 0.92 }}
@@ -198,12 +201,11 @@ export default function Gallery() {
               </div>
             </motion.div>
 
-            {/* Next */}
             {lightboxIndex < filtered.length - 1 && (
               <button
                 className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-3 z-10"
                 onClick={(e) => { e.stopPropagation(); next() }}
-                aria-label="Sonraki"
+                aria-label={t.gallery.next}
               >
                 <ArrowRightIcon className="w-7 h-7" />
               </button>

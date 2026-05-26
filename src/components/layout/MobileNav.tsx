@@ -1,13 +1,16 @@
 import { HomeIcon, UserPlusIcon, PhotoIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
-
-const ITEMS = [
-  { label: 'Ana Sayfa', Icon: HomeIcon, href: '#anasayfa', highlight: false },
-  { label: 'Ziyaretçi', Icon: UserPlusIcon, href: '#ziyaretci', highlight: true },
-  { label: 'Galeri', Icon: PhotoIcon, href: '#galeri', highlight: false },
-  { label: 'İletişim', Icon: EnvelopeIcon, href: '#iletisim', highlight: false },
-]
+import { useLang } from '../../contexts/LanguageContext'
 
 export default function MobileNav() {
+  const { t } = useLang()
+
+  const ITEMS = [
+    { label: t.nav.items[0].label, Icon: HomeIcon, href: '#anasayfa', highlight: false },
+    { label: t.nav.visitorCta, Icon: UserPlusIcon, href: '#ziyaretci', highlight: true },
+    { label: t.nav.dropdown[0].label, Icon: PhotoIcon, href: '#galeri', highlight: false },
+    { label: t.nav.dropdown[2].label, Icon: EnvelopeIcon, href: '#iletisim', highlight: false },
+  ]
+
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-ivory-dark shadow-[0_-4px_24px_rgba(10,22,40,0.08)]"
