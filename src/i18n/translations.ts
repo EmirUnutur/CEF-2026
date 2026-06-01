@@ -70,9 +70,8 @@ export const translations = {
       title: 'FUARDA YER ALAN SEKTÖRLER',
       subtitle: "Trakya'nın sanayi ekosistemini oluşturan 10 temel sektör ÇEF 2026'da buluşuyor.",
       names: ['Makine ve Ekipman', 'Otomasyon ve Robotik', 'Metal ve Yan Sanayi', 'Elektrik ve Elektronik', 'Enerji Sistemleri', 'Lojistik ve Depolama', 'Endüstriyel Yazılım', 'Üretim Teknolojileri', 'İş Güvenliği', 'Ambalaj ve Paketleme'],
-      companiesAll: 'Tüm Sektörler',
-      companiesLabel: 'katılımcı firma',
-      showAll: 'Tümünü göster',
+      companiesLabel: 'Katılımcı Firmalar',
+      companiesSuffix: 'firma katılıyor',
       downloadExcel: 'Excel İndir',
     },
     stats: {
@@ -263,9 +262,8 @@ export const translations = {
       title: 'SECTORS AT THE FAIR',
       subtitle: '10 key sectors of the Thrace industrial ecosystem gather at CEF 2026.',
       names: ['Machinery & Equipment', 'Automation & Robotics', 'Metal & Sub-Industry', 'Electrical & Electronics', 'Energy Systems', 'Logistics & Warehousing', 'Industrial Software', 'Production Technologies', 'Occupational Safety', 'Packaging'],
-      companiesAll: 'All Sectors',
-      companiesLabel: 'exhibiting companies',
-      showAll: 'Show all',
+      companiesLabel: 'Exhibiting Companies',
+      companiesSuffix: 'companies participating',
       downloadExcel: 'Download Excel',
     },
     stats: {
