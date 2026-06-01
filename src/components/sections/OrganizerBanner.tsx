@@ -66,7 +66,7 @@ export default function OrganizerBanner() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-9 h-9 flex items-center justify-center border border-navy-200 text-navy-400 hover:border-crimson hover:text-crimson transition-all duration-200"
+              className="w-9 h-9 flex items-center justify-center border border-crimson/50 text-crimson hover:border-crimson hover:bg-crimson/8 transition-all duration-200"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
@@ -75,7 +75,7 @@ export default function OrganizerBanner() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="w-9 h-9 flex items-center justify-center border border-navy-200 text-navy-400 hover:border-crimson hover:text-crimson transition-all duration-200"
+              className="w-9 h-9 flex items-center justify-center border border-crimson/50 text-crimson hover:border-crimson hover:bg-crimson/8 transition-all duration-200"
             >
               <FacebookIcon className="w-4 h-4" />
             </a>
