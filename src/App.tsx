@@ -9,11 +9,11 @@ import BackToTop from './components/ui/BackToTop'
 import Hero from './components/sections/Hero'
 import OrganizerBanner from './components/sections/OrganizerBanner'
 import VideoSection from './components/sections/VideoSection'
+import FairDateBanner from './components/sections/FairDateBanner'
 // Below-fold: lazy (code splitting)
 const About        = lazy(() => import('./components/sections/About'))
 const Stats        = lazy(() => import('./components/sections/Stats'))
 const Sectors      = lazy(() => import('./components/sections/Sectors'))
-const Countdown    = lazy(() => import('./components/sections/Countdown'))
 const Participation = lazy(() => import('./components/sections/Participation'))
 const VisitorForm  = lazy(() => import('./components/sections/VisitorForm'))
 const PastFairs    = lazy(() => import('./components/sections/PastFairs'))
@@ -34,7 +34,7 @@ export default function App() {
           <About />
           <Stats />
           <Sectors />
-          <Countdown />
+          <FairDateBanner />
           <Participation />
           <VisitorForm />
           <PastFairs />
