@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { InstagramIcon, FacebookIcon } from '../ui/SocialIcons'
 import { useLang } from '../../contexts/LanguageContext'
 
 export default function OrganizerBanner() {
@@ -59,7 +60,25 @@ export default function OrganizerBanner() {
             </p>
           </div>
 
-          <div className="flex justify-center sm:justify-end flex-shrink-0">
+          <div className="flex items-center justify-center sm:justify-end gap-2 flex-shrink-0">
+            <a
+              href="https://www.instagram.com/cerkezkoytso/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-9 h-9 flex items-center justify-center border border-navy-200 text-navy-400 hover:border-crimson hover:text-crimson transition-all duration-200"
+            >
+              <InstagramIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.facebook.com/cerkezkoytso"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-9 h-9 flex items-center justify-center border border-navy-200 text-navy-400 hover:border-crimson hover:text-crimson transition-all duration-200"
+            >
+              <FacebookIcon className="w-4 h-4" />
+            </a>
             <a
               href="https://www.cerkezkoytso.org.tr"
               target="_blank"
