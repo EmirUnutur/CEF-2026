@@ -3,7 +3,6 @@ import {
   BuildingOffice2Icon,
   PhoneIcon,
   EnvelopeIcon,
-  ArrowTopRightOnSquareIcon,
   ArrowDownTrayIcon,
   CheckIcon,
 } from '@heroicons/react/24/outline'
@@ -125,22 +124,11 @@ export default function Participation() {
               </a>
 
               {/* Urgency */}
-              <div className="border-l-2 border-crimson pl-4 mb-8">
+              <div className="border-l-2 border-crimson pl-4 mt-auto">
                 <p className="font-sans text-xs text-white/55 leading-relaxed">
                   {p.exhibitor.urgency}
                 </p>
               </div>
-
-              {/* CTA */}
-              <a
-                href="#iletisim"
-                className="group flex items-center justify-between gap-3 bg-crimson hover:bg-crimson/90 text-white px-6 py-4 transition-all duration-200 mt-auto"
-              >
-                <span className="font-sans text-sm font-semibold tracking-wide">
-                  {p.exhibitor.cta}
-                </span>
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
             </div>
           </div>
         </motion.div>
