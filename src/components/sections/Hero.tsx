@@ -28,7 +28,7 @@ export default function Hero() {
     <section
       id="anasayfa"
       ref={ref}
-      className="relative min-h-screen flex flex-col overflow-hidden bg-navy-900"
+      className="relative min-h-[100svh] flex flex-col overflow-hidden bg-navy-900"
     >
       {/* Background layer */}
       <motion.div
@@ -56,7 +56,7 @@ export default function Hero() {
           }`}
           aria-hidden="true"
         >
-          <source src="/videos/fuar-video.mp4" type="video/mp4" />
+          <source src="/videos/fuar-video.mp4" type="video/mp4" media="(min-width: 768px)" />
         </video>
         <div className="industrial-grid absolute inset-0 opacity-40" aria-hidden="true" />
         <div
@@ -91,7 +91,7 @@ export default function Hero() {
         className="relative z-10 flex-1 flex items-end"
         style={{ y: contentY, opacity }}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-28 pb-40">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-28 pb-28 sm:pb-40">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -149,12 +149,9 @@ export default function Hero() {
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div variants={itemVariants}>
               <Button variant="primary" size="lg" href="#ziyaretci">
                 {t.hero.visitorBtn}
-              </Button>
-              <Button variant="white-outline" size="lg" href="#katilim">
-                {t.hero.exhibitorBtn}
               </Button>
             </motion.div>
           </motion.div>

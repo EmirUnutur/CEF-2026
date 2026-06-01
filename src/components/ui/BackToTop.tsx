@@ -23,7 +23,7 @@ export default function BackToTop() {
           transition={{ duration: 0.3 }}
           onClick={scrollToTop}
           aria-label="Sayfanın başına dön"
-          className="fixed bottom-8 right-6 z-40 w-11 h-11 bg-navy-900 text-white flex items-center justify-center shadow-lg hover:bg-crimson transition-colors duration-200 group"
+          className="hidden lg:flex fixed lg:bottom-8 lg:right-6 z-40 w-11 h-11 bg-navy-900 text-white items-center justify-center shadow-lg hover:bg-crimson transition-colors duration-200 group"
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
         >

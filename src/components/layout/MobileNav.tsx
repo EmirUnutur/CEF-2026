@@ -22,6 +22,7 @@ export default function MobileNav() {
           <a
             key={href}
             href={href}
+            aria-label={label}
             className={`flex-1 flex flex-col items-center justify-center gap-1 py-3 min-h-[60px] transition-colors duration-150 ${
               highlight
                 ? 'bg-crimson text-white'

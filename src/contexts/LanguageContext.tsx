@@ -27,7 +27,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLang = (l: Lang) => {
     setLangState(l)
-    try { localStorage.setItem('cef-lang', l) } catch {}
+    try {
+      localStorage.setItem('cef-lang', l)
+    } catch {
+      // localStorage can be unavailable in restricted browser contexts.
+    }
   }
 
   return (

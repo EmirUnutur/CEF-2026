@@ -5,6 +5,46 @@ import Button from '../ui/Button'
 import { useLang } from '../../contexts/LanguageContext'
 import type { Lang } from '../../i18n/translations'
 
+function LangToggle({
+  lang,
+  setLang,
+  scrolled,
+  mobile = false,
+}: {
+  lang: Lang
+  setLang: (l: Lang) => void
+  scrolled: boolean
+  mobile?: boolean
+}) {
+  return (
+    <div className={`flex items-center gap-0 ${mobile ? '' : 'ml-2'}`}>
+      {(['tr', 'en'] as Lang[]).map((l, i) => (
+        <span key={l} className="flex items-center">
+          {i > 0 && (
+            <span className={`text-[10px] leading-none select-none ${
+              mobile ? 'text-navy-300' : scrolled ? 'text-navy-300' : 'text-white/50'
+            }`}>|</span>
+          )}
+          <button
+            onClick={() => setLang(l)}
+            className={`font-sans text-[11px] font-bold tracking-[0.12em] px-2 py-1 transition-colors duration-200 ${
+              lang === l
+                ? 'text-crimson'
+                : mobile
+                  ? 'text-navy-400 hover:text-crimson'
+                  : scrolled
+                    ? 'text-navy-400 hover:text-crimson'
+                    : 'text-white/70 hover:text-white'
+            }`}
+          >
+            {l.toUpperCase()}
+          </button>
+        </span>
+      ))}
+    </div>
+  )
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -32,34 +72,6 @@ export default function Navbar() {
   const navLinkStyle = !scrolled
     ? { textShadow: '0 1px 3px rgba(0,0,0,0.95), 0 2px 12px rgba(0,0,0,0.7)' }
     : undefined
-
-  const LangToggle = ({ mobile = false }: { mobile?: boolean }) => (
-    <div className={`flex items-center gap-0 ${mobile ? '' : 'ml-2'}`}>
-      {(['tr', 'en'] as Lang[]).map((l, i) => (
-        <span key={l} className="flex items-center">
-          {i > 0 && (
-            <span className={`text-[10px] leading-none select-none ${
-              mobile ? 'text-navy-300' : scrolled ? 'text-navy-300' : 'text-white/50'
-            }`}>|</span>
-          )}
-          <button
-            onClick={() => setLang(l)}
-            className={`font-sans text-[11px] font-bold tracking-[0.12em] px-2 py-1 transition-colors duration-200 ${
-              lang === l
-                ? 'text-crimson'
-                : mobile
-                  ? 'text-navy-400 hover:text-crimson'
-                  : scrolled
-                    ? 'text-navy-400 hover:text-crimson'
-                    : 'text-white/70 hover:text-white'
-            }`}
-          >
-            {l.toUpperCase()}
-          </button>
-        </span>
-      ))}
-    </div>
-  )
 
   return (
     <motion.header
@@ -106,7 +118,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <LangToggle />
+          <LangToggle lang={lang} setLang={setLang} scrolled={scrolled} />
           <div className="hidden sm:block">
             <Button variant={scrolled ? 'primary' : 'white-outline'} size="sm" href="#ziyaretci">
               {t.nav.visitorCta}
@@ -153,7 +165,7 @@ export default function Navbar() {
                 <Button variant="primary" size="md" className="flex-1 justify-center" href="#ziyaretci" onClick={() => setMobileOpen(false)}>
                   {t.nav.visitorCta}
                 </Button>
-                <LangToggle mobile />
+                <LangToggle lang={lang} setLang={setLang} scrolled={scrolled} mobile />
               </div>
             </nav>
           </motion.div>
