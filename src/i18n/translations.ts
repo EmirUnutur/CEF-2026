@@ -191,6 +191,19 @@ export const translations = {
       contactHeading: 'İletişim',
       copyright: 'Tüm hakları saklıdır.',
     },
+    videos: {
+      overline: 'Neden ÇEF?',
+      title: 'FUARI YAKINDAN KEŞFEDİN',
+      subtitle: "ÇEF 2026'nın atmosferini, organizasyon yapısını ve fuar deneyimini videolarla inceleyin.",
+      main: {
+        title: 'ÇEF 2026 Tanıtım Videosu',
+        desc: 'Fuarın genel atmosferini, sektörlerini ve ziyaretçi deneyimini yakından keşfedin.',
+      },
+      shorts: {
+        title: 'Katılımcı ve Organizasyon Deneyimi',
+        desc: 'Fuarın sunduğu fırsatları ve organizasyon deneyimini kısa video ile inceleyin.',
+      },
+    },
   },
 
   en: {
@@ -382,6 +395,19 @@ export const translations = {
     footer: {
       contactHeading: 'Contact',
       copyright: 'All rights reserved.',
+    },
+    videos: {
+      overline: 'Why CEF?',
+      title: 'DISCOVER THE FAIR UP CLOSE',
+      subtitle: 'Explore the atmosphere, organization structure and fair experience of CEF 2026 through videos.',
+      main: {
+        title: 'CEF 2026 Introduction Video',
+        desc: 'Discover the fair atmosphere, sectors and visitor experience up close.',
+      },
+      shorts: {
+        title: 'Exhibitor & Organization Experience',
+        desc: 'Explore the opportunities and organization experience of the fair in a short video.',
+      },
     },
   },
 }

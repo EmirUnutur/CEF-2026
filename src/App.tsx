@@ -5,11 +5,11 @@ import MobileNav from './components/layout/MobileNav'
 import ScrollProgress from './components/ui/ScrollProgress'
 import BackToTop from './components/ui/BackToTop'
 import Hero from './components/sections/Hero'
-import Countdown from './components/sections/Countdown'
+import VideoSection from './components/sections/VideoSection'
 import About from './components/sections/About'
-import WhyCEF from './components/sections/WhyCEF'
-import Sectors from './components/sections/Sectors'
 import Stats from './components/sections/Stats'
+import Sectors from './components/sections/Sectors'
+import Countdown from './components/sections/Countdown'
 import Participation from './components/sections/Participation'
 import VisitorForm from './components/sections/VisitorForm'
 import PastFairs from './components/sections/PastFairs'
@@ -26,11 +26,11 @@ export default function App() {
       <main>
         <Hero />
         <OrganizerBanner />
-        <Countdown />
+        <VideoSection />
         <About />
         <Stats />
-        <WhyCEF />
         <Sectors />
+        <Countdown />
         <Participation />
         <VisitorForm />
         <PastFairs />
