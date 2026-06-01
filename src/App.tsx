@@ -9,7 +9,6 @@ import BackToTop from './components/ui/BackToTop'
 import Hero from './components/sections/Hero'
 import OrganizerBanner from './components/sections/OrganizerBanner'
 import VideoSection from './components/sections/VideoSection'
-import FairDateBanner from './components/sections/FairDateBanner'
 // Below-fold: lazy (code splitting)
 const About        = lazy(() => import('./components/sections/About'))
 const Stats        = lazy(() => import('./components/sections/Stats'))
@@ -34,7 +33,6 @@ export default function App() {
           <About />
           <Stats />
           <Sectors />
-          <FairDateBanner />
           <Participation />
           <VisitorForm />
           <PastFairs />
