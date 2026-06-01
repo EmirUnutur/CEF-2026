@@ -26,7 +26,7 @@ export default function Sectors() {
   const { t } = useLang()
 
   return (
-    <section id="sektorler" className="bg-navy-900 industrial-grid py-16 sm:py-20 relative overflow-hidden scroll-mt-20">
+    <section id="sektorler" className="bg-navy-900 industrial-grid py-16 sm:py-20 relative overflow-hidden">
       <div className="absolute right-0 top-0 bottom-0 w-1 bg-crimson/40" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
