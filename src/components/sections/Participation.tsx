@@ -115,7 +115,7 @@ export default function Participation() {
   const { participation: p } = t
 
   return (
-    <section id="katilim" className="bg-ivory ivory-grid py-20 sm:py-32">
+    <section id="katilim" className="bg-ivory ivory-grid py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="text-center mb-14">

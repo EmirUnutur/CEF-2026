@@ -43,7 +43,7 @@ export default function Countdown() {
   const { t } = useLang()
 
   return (
-    <section id="geri-sayim" className="bg-ivory ivory-grid py-20 sm:py-28">
+    <section id="geri-sayim" className="bg-ivory ivory-grid py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <motion.div
           className="text-center mb-12"

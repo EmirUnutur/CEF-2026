@@ -62,7 +62,7 @@ export default function Gallery() {
   }
 
   return (
-    <section id="galeri" className="bg-white py-20 sm:py-32 border-t border-ivory-dark">
+    <section id="galeri" className="bg-white py-12 sm:py-16 border-t border-ivory-dark">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="mb-10">
