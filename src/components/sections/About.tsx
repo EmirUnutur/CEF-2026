@@ -48,25 +48,6 @@ export default function About() {
                 {t.about.desc2(SITE_CONFIG.year, SITE_CONFIG.edition)}
               </p>
 
-              <div className="flex flex-wrap gap-6 mb-10">
-                <div className="flex flex-col">
-                  <span className="font-display text-5xl text-navy-900 leading-none">
-                    {SITE_CONFIG.edition}.
-                  </span>
-                  <span className="font-sans text-sm text-navy-500 mt-1">{t.about.editionLabel}</span>
-                </div>
-                <div className="w-px bg-ivory-deep self-stretch" />
-                <div className="flex flex-col">
-                  <span className="font-display text-5xl text-navy-900 leading-none">3</span>
-                  <span className="font-sans text-sm text-navy-500 mt-1">{t.about.dayFairLabel}</span>
-                </div>
-                <div className="w-px bg-ivory-deep self-stretch" />
-                <div className="flex flex-col">
-                  <span className="font-display text-5xl text-crimson leading-none">2017</span>
-                  <span className="font-sans text-sm text-navy-500 mt-1">{t.about.sinceLabel}</span>
-                </div>
-              </div>
-
               <Button variant="primary" size="lg" href="#neden-cef">
                 {t.about.button}
               </Button>
