@@ -118,6 +118,7 @@ export default function Gallery() {
                   alt={item.alt}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/45 transition-colors duration-300" />
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -185,6 +186,7 @@ export default function Gallery() {
                 src={filtered[lightboxIndex].src}
                 alt={filtered[lightboxIndex].alt}
                 className="w-full max-h-[75vh] object-contain"
+                decoding="async"
               />
               <div className="bg-navy-900/80 px-5 py-3 flex justify-between items-center">
                 <div>

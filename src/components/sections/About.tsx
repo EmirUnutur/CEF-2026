@@ -70,6 +70,7 @@ export default function About() {
                       alt={t.about.images[i].alt}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-colors duration-300" />
                   </motion.div>

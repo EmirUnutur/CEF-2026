@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import Button from '../ui/Button'
@@ -7,6 +7,7 @@ import { useLang } from '../../contexts/LanguageContext'
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
+  const [videoReady, setVideoReady] = useState(false)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '12%'])
@@ -48,8 +49,11 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/banner.png"
-          className="absolute inset-0 w-full h-full object-cover"
+          onLoadedData={() => setVideoReady(true)}
+          onCanPlay={() => setVideoReady(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            videoReady ? 'opacity-100' : 'opacity-0'
+          }`}
           aria-hidden="true"
         >
           <source src="/videos/fuar-video.mp4" type="video/mp4" />

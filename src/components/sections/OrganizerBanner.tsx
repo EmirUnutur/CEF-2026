@@ -35,6 +35,8 @@ export default function OrganizerBanner() {
               alt="Çerkezköy Ticaret ve Sanayi Odası"
               draggable={false}
               className="h-64 sm:h-60 w-auto block"
+              loading="lazy"
+              decoding="async"
               style={{ mixBlendMode: 'multiply' }}
             />
           </div>
