@@ -35,10 +35,10 @@ export default function Contact() {
   ]
 
   return (
-    <section id="iletisim" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark scroll-mt-20">
+    <section id="iletisim" className="bg-ivory py-10 sm:py-14 border-t border-ivory-dark scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
-        <ScrollReveal className="mb-14">
+        <ScrollReveal className="mb-8">
           <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center gap-2">
             <span className="inline-block w-8 h-px bg-current" />
             {c.overline}
@@ -51,7 +51,7 @@ export default function Contact() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {contactCards.map((card, i) => (
             <ScrollReveal key={card.label} delay={i * 0.1}>
               <a
