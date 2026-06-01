@@ -56,7 +56,7 @@ export default function Hero() {
           }`}
           aria-hidden="true"
         >
-          <source src="/videos/fuar-video.mp4" type="video/mp4" media="(min-width: 768px)" />
+          <source src="/videos/fuar-video.mp4" type="video/mp4" />
         </video>
         <div className="industrial-grid absolute inset-0 opacity-40" aria-hidden="true" />
         <div
