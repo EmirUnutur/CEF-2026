@@ -83,6 +83,37 @@ export const SECTORS = [
   { id: 'packaging', name: 'Ambalaj ve Paketleme', icon: 'archive' },
 ]
 
+// ─── Exhibiting Companies ─────────────────────────────────────────────────────
+// Excel dosyası geldiğinde bu listeyi güncelleyin.
+// Her firma: { name: string, sector: SECTORS[].id }
+
+export const COMPANIES: { name: string; sector: string }[] = [
+  { name: 'Trakya Makine A.Ş.', sector: 'machinery' },
+  { name: 'Çerkezköy Endüstri Ltd.', sector: 'machinery' },
+  { name: 'Delta Makine San.', sector: 'machinery' },
+  { name: 'RoboTek Sistemleri', sector: 'automation' },
+  { name: 'Otomasyon Pro A.Ş.', sector: 'automation' },
+  { name: 'SmartLine Teknoloji', sector: 'automation' },
+  { name: 'Çelik-Kar Metal San.', sector: 'metal' },
+  { name: 'Trakya Demir Çelik', sector: 'metal' },
+  { name: 'Metform Endüstri', sector: 'metal' },
+  { name: 'ElektroTeknik A.Ş.', sector: 'electrical' },
+  { name: 'Volt Elektrik San.', sector: 'electrical' },
+  { name: 'Akım Elektronik Ltd.', sector: 'electrical' },
+  { name: 'EnerjiSis Sistemleri', sector: 'energy' },
+  { name: 'Güneş Enerji A.Ş.', sector: 'energy' },
+  { name: 'Trakya Lojistik Ltd.', sector: 'logistics' },
+  { name: 'Depo-Pro San. Tic.', sector: 'logistics' },
+  { name: 'EndüsSoft Yazılım', sector: 'software' },
+  { name: 'Tekno Bilişim A.Ş.', sector: 'software' },
+  { name: 'ÜretimTek Sistemleri', sector: 'production' },
+  { name: 'ProLine Üretim San.', sector: 'production' },
+  { name: 'SafeWork Güvenlik', sector: 'safety' },
+  { name: 'İş Güven A.Ş.', sector: 'safety' },
+  { name: 'AmbalajPro Paketleme', sector: 'packaging' },
+  { name: 'PackLine Endüstri', sector: 'packaging' },
+]
+
 // ─── Statistics ───────────────────────────────────────────────────────────────
 
 export const STATS = [

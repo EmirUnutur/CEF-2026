@@ -3,7 +3,6 @@ import {
   BuildingOffice2Icon,
   PhoneIcon,
   EnvelopeIcon,
-  ArrowDownTrayIcon,
   CheckIcon,
 } from '@heroicons/react/24/outline'
 import ScrollReveal from '../ui/ScrollReveal'
@@ -133,32 +132,6 @@ export default function Participation() {
           </div>
         </motion.div>
 
-        {/* Excel download strip */}
-        <ScrollReveal delay={0.15}>
-          <div className="mt-4 bg-white border border-ivory-dark flex flex-col sm:flex-row items-center justify-between gap-5 px-7 py-5">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-green-600/10 flex items-center justify-center flex-shrink-0">
-                <ArrowDownTrayIcon className="w-5 h-5 text-green-700" />
-              </div>
-              <div>
-                <p className="font-sans text-sm font-semibold text-navy-800 mb-0.5">
-                  {p.download.label}
-                </p>
-                <p className="font-sans text-xs text-navy-500">
-                  {p.download.desc}
-                </p>
-              </div>
-            </div>
-            <a
-              href="/downloads/katilimci-listesi.xlsx"
-              download
-              className="flex-shrink-0 flex items-center gap-2 font-sans text-sm font-semibold text-green-700 border border-green-600/40 bg-green-50 hover:bg-green-600 hover:text-white hover:border-green-600 px-5 py-2.5 transition-all duration-200 whitespace-nowrap"
-            >
-              <ArrowDownTrayIcon className="w-4 h-4" />
-              {p.download.cta}
-            </a>
-          </div>
-        </ScrollReveal>
 
       </div>
     </section>
