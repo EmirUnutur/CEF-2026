@@ -14,7 +14,7 @@ export const translations = {
       about: 'Hakkında',
       dropdown: [
         { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar', description: 'Fotoğraf arşivini incele' },
-        { label: 'Ulaşım', href: '#ulasim', description: 'Fuar alanına ulaşım bilgisi' },
+        { label: 'Ulaşım', href: '#iletisim', description: 'Fuar alanına ulaşım bilgisi' },
         { label: 'İletişim', href: '#iletisim', description: 'Bize ulaşın' },
       ],
       visitorCta: 'Ziyaretçi Kayıt',
@@ -219,7 +219,7 @@ export const translations = {
       about: 'About',
       dropdown: [
         { label: 'Past Fairs', href: '#gecmis-fuarlar', description: 'Browse photo archive' },
-        { label: 'Location', href: '#ulasim', description: 'How to reach the venue' },
+        { label: 'Location', href: '#iletisim', description: 'How to reach the venue' },
         { label: 'Contact', href: '#iletisim', description: 'Get in touch' },
       ],
       visitorCta: 'Register',

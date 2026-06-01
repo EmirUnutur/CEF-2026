@@ -73,18 +73,18 @@ export default function Sectors() {
 
         {/* Katılımcı firmalar şeridi */}
         <ScrollReveal>
-          <div className="border border-white/10 bg-white/4 flex flex-col sm:flex-row items-center justify-between gap-5 px-6 py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 border-2 border-white/25 bg-white/8 px-7 py-6 mt-2">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-crimson/15 border border-crimson/30 flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-crimson/20 border border-crimson/40 flex items-center justify-center flex-shrink-0">
                 <BuildingOffice2Icon className="w-5 h-5 text-crimson" />
               </div>
               <div>
-                <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-white/40 mb-0.5">
+                <p className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-0.5">
                   {t.sectors.companiesLabel}
                 </p>
-                <p className="font-display text-xl text-white leading-none">
+                <p className="font-display text-2xl text-white leading-none">
                   <span className="text-crimson">{COMPANIES.length}</span>
-                  <span className="font-sans text-sm text-white/50 ml-2">{t.sectors.companiesSuffix}</span>
+                  <span className="font-sans text-sm text-white/60 ml-2">{t.sectors.companiesSuffix}</span>
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function Sectors() {
             <a
               href="/downloads/katilimci-listesi.xlsx"
               download
-              className="flex items-center gap-2.5 font-sans text-sm font-semibold text-white border border-white/20 hover:border-crimson hover:text-crimson px-5 py-3 transition-all duration-200 whitespace-nowrap"
+              className="flex items-center gap-2.5 font-sans text-sm font-semibold text-white bg-crimson hover:bg-crimson/85 px-6 py-3.5 transition-colors duration-200 whitespace-nowrap"
             >
               <ArrowDownTrayIcon className="w-4 h-4" />
               {t.sectors.downloadExcel}

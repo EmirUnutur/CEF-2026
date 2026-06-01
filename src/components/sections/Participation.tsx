@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import {
   BuildingOffice2Icon,
-  PhoneIcon,
-  EnvelopeIcon,
   CheckIcon,
+  EnvelopeIcon,
+  PhoneIcon,
 } from '@heroicons/react/24/outline'
 import ScrollReveal from '../ui/ScrollReveal'
 import { SITE_CONFIG } from '../../data/content'
@@ -80,58 +80,62 @@ export default function Participation() {
               </div>
             </div>
 
-            {/* Right — contact action (2/5) */}
-            <div className="lg:col-span-2 p-8 sm:p-12 flex flex-col">
-              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-6">
-                {p.contact.heading}
-              </p>
+            {/* Right — contact info (2/5) */}
+            <div className="lg:col-span-2 p-8 sm:p-12 flex flex-col gap-6">
 
-              <p className="font-sans text-sm text-white/60 leading-relaxed mb-8">
-                {p.contact.desc}
-              </p>
+              <div>
+                <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3">
+                  {p.contact.heading}
+                </p>
+                <p className="font-sans text-sm text-white/65 leading-relaxed">
+                  Stand alanı, katılım koşulları ve fiyatlandırma hakkında bilgi almak için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz.
+                </p>
+              </div>
 
-              {/* Phone */}
-              <a
-                href={`tel:${SITE_CONFIG.phone}`}
-                className="group flex items-center gap-4 border border-white/15 hover:border-crimson/60 bg-white/5 hover:bg-crimson/8 px-5 py-4 transition-all duration-200 mb-3"
-              >
-                <PhoneIcon className="w-5 h-5 text-crimson flex-shrink-0" />
-                <div className="min-w-0">
-                  <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-white/35 mb-0.5">
+              <div className="h-px bg-white/10" />
+
+              {/* Phone — text only */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 bg-white/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <PhoneIcon className="w-4 h-4 text-crimson" />
+                </div>
+                <div>
+                  <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-white/35 mb-1">
                     {p.contact.phoneLabel}
                   </p>
-                  <p className="font-sans text-sm font-semibold text-white group-hover:text-crimson transition-colors duration-200">
+                  <p className="font-sans text-base font-semibold text-white">
                     {SITE_CONFIG.phone}
                   </p>
                 </div>
-              </a>
+              </div>
 
-              {/* Email */}
-              <a
-                href={`mailto:${SITE_CONFIG.email}`}
-                className="group flex items-center gap-4 border border-white/15 hover:border-crimson/60 bg-white/5 hover:bg-crimson/8 px-5 py-4 transition-all duration-200 mb-8"
-              >
-                <EnvelopeIcon className="w-5 h-5 text-crimson flex-shrink-0" />
-                <div className="min-w-0">
-                  <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-white/35 mb-0.5">
+              {/* Email — text only */}
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 bg-white/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <EnvelopeIcon className="w-4 h-4 text-crimson" />
+                </div>
+                <div>
+                  <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-white/35 mb-1">
                     {p.contact.emailLabel}
                   </p>
-                  <p className="font-sans text-sm font-semibold text-white group-hover:text-crimson transition-colors duration-200 truncate">
+                  <p className="font-sans text-sm font-medium text-white/80 break-all">
                     {SITE_CONFIG.email}
                   </p>
                 </div>
-              </a>
+              </div>
+
+              <div className="h-px bg-white/10" />
 
               {/* Urgency */}
-              <div className="border-l-2 border-crimson pl-4 mt-auto">
-                <p className="font-sans text-xs text-white/55 leading-relaxed">
+              <div className="border-l-2 border-crimson pl-4">
+                <p className="font-sans text-xs text-white/50 leading-relaxed">
                   {p.exhibitor.urgency}
                 </p>
               </div>
+
             </div>
           </div>
         </motion.div>
-
 
       </div>
     </section>

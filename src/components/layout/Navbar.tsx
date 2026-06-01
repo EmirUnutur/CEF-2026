@@ -33,7 +33,7 @@ export default function Navbar() {
         <span key={l} className="flex items-center">
           {i > 0 && (
             <span className={`text-[10px] leading-none select-none ${
-              mobile ? 'text-navy-300' : scrolled ? 'text-navy-300' : 'text-white/20'
+              mobile ? 'text-navy-300' : scrolled ? 'text-navy-300' : 'text-white/50'
             }`}>|</span>
           )}
           <button
@@ -45,7 +45,7 @@ export default function Navbar() {
                   ? 'text-navy-400 hover:text-crimson'
                   : scrolled
                     ? 'text-navy-400 hover:text-crimson'
-                    : 'text-white/40 hover:text-white/70'
+                    : 'text-white/70 hover:text-white'
             }`}
           >
             {l.toUpperCase()}
@@ -60,7 +60,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
         scrolled
           ? 'bg-ivory/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          : 'bg-gradient-to-b from-navy-900/55 to-transparent'
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -95,7 +95,7 @@ export default function Navbar() {
               className={`font-sans text-[13.5px] font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
                 scrolled ? 'text-navy-700' : 'text-white/95'
               }`}
-              style={!scrolled ? { textShadow: '0 1px 12px rgba(0,0,0,0.7), 0 0 24px rgba(0,0,0,0.35)' } : undefined}
+              style={!scrolled ? { textShadow: '0 1px 3px rgba(0,0,0,0.95), 0 2px 12px rgba(0,0,0,0.7)' } : undefined}
             >
               {item.label}
               <span className="absolute bottom-0 left-3 right-3 h-px bg-crimson scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
@@ -113,7 +113,7 @@ export default function Navbar() {
               className={`flex items-center gap-1 font-sans text-[13.5px] font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
                 scrolled ? 'text-navy-700' : 'text-white/95'
               }`}
-              style={!scrolled ? { textShadow: '0 1px 12px rgba(0,0,0,0.7), 0 0 24px rgba(0,0,0,0.35)' } : undefined}
+              style={!scrolled ? { textShadow: '0 1px 3px rgba(0,0,0,0.95), 0 2px 12px rgba(0,0,0,0.7)' } : undefined}
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
             >
