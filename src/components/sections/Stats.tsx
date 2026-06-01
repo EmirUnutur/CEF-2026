@@ -8,7 +8,7 @@ export default function Stats() {
 
   return (
     <section id="istatistikler" className="bg-white border-t border-ivory-dark">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-10 sm:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 
           {/* Left — title block (2/5) */}
