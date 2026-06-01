@@ -105,11 +105,10 @@ export default function VisitorForm() {
 
               <h2
                 className="font-display text-navy-900 leading-none mb-4"
-                style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
+                style={{ fontSize: 'clamp(40px, 7vw, 84px)' }}
               >
                 {f.titleLines[0]}<br />
-                {f.titleLines[1]}<br />
-                {f.titleLines[2]}
+                {f.titleLines[1]}
               </h2>
 
               <div className="w-12 h-1 bg-crimson mb-5" />

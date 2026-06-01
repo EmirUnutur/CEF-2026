@@ -101,7 +101,7 @@ export const translations = {
     },
     form: {
       overline: 'Ziyaretçi Kaydı',
-      titleLines: ['FUARI', 'ZİYARET', 'EDİN'],
+      titleLines: ['FUARI', 'ZİYARET EDİN'],
       desc: (dates: string) => `${dates} tarihlerinde gerçekleşecek olan Çerkezköy Endüstriyel Fuarı 2026'yı ziyaret etmek için kaydınızı oluşturun. Kayıt ücretsizdir.`,
       benefits: ['Tüm fuara ücretsiz giriş', '100+ katılımcı firma', 'Konferans ve seminer programı', 'B2B görüşme imkânı', 'Dijital fuar kataloğu'],
       formTitle: 'ZİYARETÇİ KAYIT FORMU',
@@ -283,7 +283,7 @@ export const translations = {
     },
     form: {
       overline: 'Visitor Registration',
-      titleLines: ['VISIT', 'THE', 'FAIR'],
+      titleLines: ['VISIT', 'THE FAIR'],
       desc: (dates: string) => `Register to visit Çerkezköy Industrial Fair 2026, taking place on ${dates}. Registration is free of charge.`,
       benefits: ['Free admission to the full fair', '100+ exhibiting companies', 'Conference and seminar program', 'B2B meeting opportunities', 'Digital fair catalogue'],
       formTitle: 'VISITOR REGISTRATION FORM',
