@@ -28,9 +28,9 @@ export default function App() {
         <OrganizerBanner />
         <Countdown />
         <About />
+        <Stats />
         <WhyCEF />
         <Sectors />
-        <Stats />
         <Participation />
         <VisitorForm />
         <PastFairs />

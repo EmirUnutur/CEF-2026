@@ -75,6 +75,7 @@ export const translations = {
       overline: 'Sayılarla ÇEF',
       title: 'SAYILARLA ÇEF 2026',
       titleLines: ['SAYILARLA', 'ÇEF 2026'],
+      subtitle: "Çerkezköy Endüstriyel Fuarı'nın büyüyen organizasyon gücünü rakamlarla keşfedin.",
       items: [
         { label: 'Edisyon', sublabel: '2026 yılında gerçekleşiyor' },
         { label: 'Günlük Fuar', sublabel: '09–11 Eylül 2026' },
@@ -258,6 +259,7 @@ export const translations = {
       overline: 'CEF in Numbers',
       title: 'CEF 2026 IN NUMBERS',
       titleLines: ['IN NUMBERS', 'CEF 2026'],
+      subtitle: 'Discover the growing power of Çerkezköy Industrial Fair through the numbers.',
       items: [
         { label: 'Edition', sublabel: 'Taking place in 2026' },
         { label: 'Day Fair', sublabel: '09–11 September 2026' },

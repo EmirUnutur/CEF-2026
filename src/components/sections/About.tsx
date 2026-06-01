@@ -17,34 +17,33 @@ export default function About() {
   return (
     <section id="hakkinda" className="bg-white py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-        {/* Full-width title */}
-        <ScrollReveal className="mb-12">
-          <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-4 flex items-center gap-2">
-            <span className="inline-block w-8 h-px bg-current" />
-            {t.about.overline}
-          </p>
-          <h2
-            className="font-display text-navy-900 leading-none mb-5"
-            style={{ fontSize: 'clamp(44px, 8vw, 100px)', lineHeight: 0.9 }}
-          >
-            {t.about.titleLines[0]}
-            <br />
-            {t.about.titleLines[1]}
-            <br />
-            <span className="text-crimson">{t.about.titleLines[2]}</span>
-          </h2>
-          <div className="w-16 h-1 bg-crimson" />
-        </ScrollReveal>
-
-        {/* Content: text left, images right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
+          {/* Text column */}
           <ScrollReveal direction="left">
             <div>
-              <p className="font-sans text-base sm:text-lg text-navy-600 leading-relaxed mb-5">
+              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-4 flex items-center gap-2">
+                <span className="inline-block w-8 h-px bg-current" />
+                {t.about.overline}
+              </p>
+
+              <h2
+                className="font-display text-navy-900 leading-none mb-6"
+                style={{ fontSize: 'clamp(40px, 6vw, 72px)' }}
+              >
+                {t.about.titleLines[0]}
+                <br />
+                {t.about.titleLines[1]}
+                <br />
+                {t.about.titleLines[2]}
+              </h2>
+
+              <div className="w-16 h-1 bg-crimson mb-8" />
+
+              <p className="font-sans text-base sm:text-lg text-navy-600 leading-relaxed mb-6">
                 {t.about.desc1}
               </p>
+
               <p className="font-sans text-base text-navy-600 leading-relaxed mb-10">
                 {t.about.desc2(SITE_CONFIG.year, SITE_CONFIG.edition)}
               </p>
@@ -74,7 +73,7 @@ export default function About() {
             </div>
           </ScrollReveal>
 
-          {/* Image grid */}
+          {/* Image column */}
           <ScrollReveal direction="right" delay={0.15}>
             <div className="relative">
               <div className="grid grid-cols-2 gap-3">
@@ -96,6 +95,7 @@ export default function About() {
                 ))}
               </div>
 
+              {/* Floating edition badge */}
               <motion.div
                 className="absolute -bottom-5 right-0 sm:-right-5 bg-crimson text-white px-6 py-4 shadow-2xl z-10"
                 initial={{ opacity: 0, scale: 0.8 }}
