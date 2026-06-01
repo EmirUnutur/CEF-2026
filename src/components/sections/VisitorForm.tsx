@@ -91,7 +91,7 @@ export default function VisitorForm() {
   }
 
   return (
-    <section id="ziyaretci" className="bg-ivory ivory-grid py-12 sm:py-16 scroll-mt-20">
+    <section id="ziyaretci" className="bg-ivory ivory-grid py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
 
@@ -139,10 +139,10 @@ export default function VisitorForm() {
 
           {/* Right — form */}
           <ScrollReveal direction="right" delay={0.1} className="h-full">
-            <div id="ziyaretci-form" className="bg-white border border-ivory-dark p-8 sm:p-10 relative scroll-mt-24 h-full flex flex-col">
+            <div id="ziyaretci-form" className="bg-white border border-ivory-dark p-8 sm:p-10 relative h-full flex flex-col">
               <div className="absolute top-0 left-0 right-0 h-1 bg-crimson" />
 
-              <AnimatePresence mode="wait" className="flex-1">
+              <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div
                     key="success"

@@ -1,22 +1,25 @@
+import { lazy, Suspense } from 'react'
 import { LanguageProvider } from './contexts/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import MobileNav from './components/layout/MobileNav'
 import ScrollProgress from './components/ui/ScrollProgress'
 import BackToTop from './components/ui/BackToTop'
+// Above-fold: eager
 import Hero from './components/sections/Hero'
-import VideoSection from './components/sections/VideoSection'
-import About from './components/sections/About'
-import Stats from './components/sections/Stats'
-import Sectors from './components/sections/Sectors'
-import Countdown from './components/sections/Countdown'
-import Participation from './components/sections/Participation'
-import VisitorForm from './components/sections/VisitorForm'
-import PastFairs from './components/sections/PastFairs'
-import Gallery from './components/sections/Gallery'
-import Location from './components/sections/Location'
-import Contact from './components/sections/Contact'
 import OrganizerBanner from './components/sections/OrganizerBanner'
+import VideoSection from './components/sections/VideoSection'
+// Below-fold: lazy (code splitting)
+const About        = lazy(() => import('./components/sections/About'))
+const Stats        = lazy(() => import('./components/sections/Stats'))
+const Sectors      = lazy(() => import('./components/sections/Sectors'))
+const Countdown    = lazy(() => import('./components/sections/Countdown'))
+const Participation = lazy(() => import('./components/sections/Participation'))
+const VisitorForm  = lazy(() => import('./components/sections/VisitorForm'))
+const PastFairs    = lazy(() => import('./components/sections/PastFairs'))
+const Gallery      = lazy(() => import('./components/sections/Gallery'))
+const Location     = lazy(() => import('./components/sections/Location'))
+const Contact      = lazy(() => import('./components/sections/Contact'))
 
 export default function App() {
   return (
@@ -27,16 +30,18 @@ export default function App() {
         <Hero />
         <OrganizerBanner />
         <VideoSection />
-        <About />
-        <Stats />
-        <Sectors />
-        <Countdown />
-        <Participation />
-        <VisitorForm />
-        <PastFairs />
-        <Gallery />
-        <Location />
-        <Contact />
+        <Suspense fallback={null}>
+          <About />
+          <Stats />
+          <Sectors />
+          <Countdown />
+          <Participation />
+          <VisitorForm />
+          <PastFairs />
+          <Gallery />
+          <Location />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
       <BackToTop />

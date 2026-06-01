@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none'
 
@@ -11,11 +11,11 @@ interface ScrollRevealProps {
 }
 
 const directionOffset: Record<Direction, { x: number; y: number }> = {
-  up: { x: 0, y: 40 },
-  down: { x: 0, y: -40 },
-  left: { x: 20, y: 0 },
-  right: { x: -20, y: 0 },
-  none: { x: 0, y: 0 },
+  up:    { x: 0,   y: 40  },
+  down:  { x: 0,   y: -40 },
+  left:  { x: 20,  y: 0   },
+  right: { x: -20, y: 0   },
+  none:  { x: 0,   y: 0   },
 }
 
 export default function ScrollReveal({
@@ -25,7 +25,13 @@ export default function ScrollReveal({
   className = '',
   once = true,
 }: ScrollRevealProps) {
+  const shouldReduce = useReducedMotion()
   const { x, y } = directionOffset[direction]
+
+  // Kullanıcı hareketi azaltmayı tercih ediyorsa animasyon yok
+  if (shouldReduce) {
+    return <div className={className}>{children}</div>
+  }
 
   return (
     <motion.div
