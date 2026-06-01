@@ -17,7 +17,7 @@ export default function PastFairs() {
   }
 
   return (
-    <section id="gecmis-fuarlar" className="bg-ivory py-12 sm:py-16">
+    <section id="gecmis-fuarlar" className="bg-ivory py-12 sm:py-16 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">

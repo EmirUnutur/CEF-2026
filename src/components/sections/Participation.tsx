@@ -14,7 +14,7 @@ export default function Participation() {
   const { participation: p } = t
 
   return (
-    <section id="katilim" className="bg-ivory ivory-grid py-12 sm:py-16">
+    <section id="katilim" className="bg-ivory ivory-grid py-12 sm:py-16 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         {/* Header */}

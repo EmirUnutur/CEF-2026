@@ -18,7 +18,7 @@ export default function WhyCEF() {
   const { t } = useLang()
 
   return (
-    <section id="neden-cef" className="relative bg-navy-900 overflow-hidden py-20 sm:py-32">
+    <section id="neden-cef" className="relative bg-navy-900 overflow-hidden py-20 sm:py-32 scroll-mt-20">
 
       {/* Arka plan katmanları */}
       <div

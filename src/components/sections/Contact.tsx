@@ -35,7 +35,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="iletisim" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark">
+    <section id="iletisim" className="bg-ivory py-20 sm:py-32 border-t border-ivory-dark scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
         <ScrollReveal className="mb-14">

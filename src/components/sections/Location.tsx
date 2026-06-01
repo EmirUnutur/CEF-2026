@@ -15,7 +15,7 @@ export default function Location() {
   ]
 
   return (
-    <section id="ulasim" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden">
+    <section id="ulasim" className="bg-navy-900 industrial-grid py-20 sm:py-32 relative overflow-hidden scroll-mt-20">
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-crimson/50" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
