@@ -16,6 +16,7 @@ import PastFairs from './components/sections/PastFairs'
 import Gallery from './components/sections/Gallery'
 import Location from './components/sections/Location'
 import Contact from './components/sections/Contact'
+import OrganizerBanner from './components/sections/OrganizerBanner'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <OrganizerBanner />
         <Countdown />
         <About />
         <WhyCEF />
