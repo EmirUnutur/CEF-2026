@@ -38,13 +38,11 @@ const GALLERY_ITEMS = [
 const YEARS = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017']
 
 export default function Gallery() {
-  const [activeYear, setActiveYear] = useState<string | null>(null)
+  const [activeYear, setActiveYear] = useState<string>('2025')
   const [lightbox, setLightbox] = useState<number | null>(null)
   const { t } = useLang()
 
-  const filtered = activeYear === null
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter((g) => g.year === activeYear)
+  const filtered = GALLERY_ITEMS.filter((g) => g.year === activeYear)
 
   const lightboxIndex = lightbox !== null ? filtered.findIndex((g) => g.id === lightbox) : -1
 
@@ -83,17 +81,6 @@ export default function Gallery() {
             {/* Year filter */}
             <div className="flex gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-wrap sm:justify-end"
               style={{ scrollbarWidth: 'none' }}>
-              <button
-                onClick={() => setActiveYear(null)}
-                aria-pressed={activeYear === null}
-                className={`flex-none font-sans text-xs font-semibold tracking-[0.15em] uppercase px-4 py-2.5 border transition-all duration-200 ${
-                  activeYear === null
-                    ? 'bg-navy-900 text-white border-navy-900'
-                    : 'bg-transparent text-navy-600 border-ivory-deep hover:border-navy-700 hover:text-navy-900'
-                }`}
-              >
-                {t.gallery.all}
-              </button>
               {YEARS.map((year) => (
                 <button
                   key={year}
