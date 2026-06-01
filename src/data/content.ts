@@ -30,7 +30,7 @@ export const NAV_ITEMS = [
 ]
 
 export const HAKKINDA_DROPDOWN = [
-  { label: 'Galeri', href: '#galeri', description: 'Fotoğraf arşivini incele' },
+  { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar', description: 'Fotoğraf arşivini incele' },
   { label: 'Ulaşım', href: '#ulasim', description: 'Fuar alanına ulaşım bilgisi' },
   { label: 'İletişim', href: '#iletisim', description: 'Bize ulaşın' },
 ]
@@ -195,7 +195,7 @@ export const FOOTER_LINKS = [
     items: [
       { label: 'Katılımcı Bilgisi', href: '#katilim' },
       { label: 'Ziyaretçi Kayıt', href: '#ziyaretci' },
-      { label: 'Galeri', href: '#galeri' },
+      { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
       { label: 'Ulaşım', href: '#ulasim' },
     ],
   },

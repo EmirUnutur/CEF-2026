@@ -15,7 +15,6 @@ const Stats        = lazy(() => import('./components/sections/Stats'))
 const Sectors      = lazy(() => import('./components/sections/Sectors'))
 const Participation = lazy(() => import('./components/sections/Participation'))
 const VisitorForm  = lazy(() => import('./components/sections/VisitorForm'))
-const PastFairs    = lazy(() => import('./components/sections/PastFairs'))
 const Gallery      = lazy(() => import('./components/sections/Gallery'))
 const Location     = lazy(() => import('./components/sections/Location'))
 const Contact      = lazy(() => import('./components/sections/Contact'))
@@ -35,7 +34,6 @@ export default function App() {
           <Sectors />
           <Participation />
           <VisitorForm />
-          <PastFairs />
           <Gallery />
           <Location />
           <Contact />

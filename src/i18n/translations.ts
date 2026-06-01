@@ -13,7 +13,7 @@ export const translations = {
       ],
       about: 'Hakkında',
       dropdown: [
-        { label: 'Galeri', href: '#galeri', description: 'Fotoğraf arşivini incele' },
+        { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar', description: 'Fotoğraf arşivini incele' },
         { label: 'Ulaşım', href: '#ulasim', description: 'Fuar alanına ulaşım bilgisi' },
         { label: 'İletişim', href: '#iletisim', description: 'Bize ulaşın' },
       ],
@@ -146,8 +146,8 @@ export const translations = {
       next: 'Sonraki',
     },
     gallery: {
-      overline: 'Fotoğraf Arşivi',
-      title: 'GALERİ',
+      overline: 'Geçmiş Fuarlar',
+      title: 'GEÇMİŞ FUARLAR',
       all: 'Tümü',
       noPhotos: 'Bu yıl için görsel bulunamadı.',
       hint: 'Görsellere tıklayarak tam ekranda görüntüleyebilirsiniz',
@@ -218,7 +218,7 @@ export const translations = {
       ],
       about: 'About',
       dropdown: [
-        { label: 'Gallery', href: '#galeri', description: 'Browse photo archive' },
+        { label: 'Past Fairs', href: '#gecmis-fuarlar', description: 'Browse photo archive' },
         { label: 'Location', href: '#ulasim', description: 'How to reach the venue' },
         { label: 'Contact', href: '#iletisim', description: 'Get in touch' },
       ],
@@ -351,8 +351,8 @@ export const translations = {
       next: 'Next',
     },
     gallery: {
-      overline: 'Photo Archive',
-      title: 'GALLERY',
+      overline: 'Past Fairs',
+      title: 'PAST FAIRS',
       all: 'All',
       noPhotos: 'No photos found for this year.',
       hint: 'Click on images to view fullscreen',
