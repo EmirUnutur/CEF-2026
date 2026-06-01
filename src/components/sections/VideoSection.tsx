@@ -45,7 +45,7 @@ export default function VideoSection() {
         </ScrollReveal>
 
         {/* ── Video Layout ────────────────────────────────────────────── */}
-        <div className="flex flex-col lg:flex-row gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 lg:items-stretch">
 
           {/* ── Main Video (16:9) ─────────────────────────────────────── */}
           <ScrollReveal direction="left" delay={0.15} className="w-full lg:flex-1 min-w-0">
@@ -78,21 +78,21 @@ export default function VideoSection() {
           </ScrollReveal>
 
           {/* ── Shorts Video (9:16) ───────────────────────────────────── */}
-          <ScrollReveal direction="right" delay={0.25} className="w-full lg:w-auto lg:flex-shrink-0 flex justify-center lg:justify-start">
-            <div className="w-full max-w-[300px] lg:max-w-none lg:w-[270px] xl:w-[300px]">
+          <ScrollReveal direction="right" delay={0.25} className="w-full lg:w-auto lg:flex-shrink-0 lg:flex lg:flex-col">
+            <div className="w-full max-w-[300px] mx-auto lg:mx-0 lg:max-w-none lg:w-[270px] xl:w-[300px] lg:h-full">
 
               {/* Phone-frame card */}
-              <div className="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden">
+              <div className="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden lg:h-full lg:flex lg:flex-col">
                 {/* Shorts pill indicator */}
-                <div className="flex items-center gap-2 px-4 pt-3 pb-2">
+                <div className="flex items-center gap-2 px-4 pt-3 pb-2 flex-shrink-0">
                   <span className="w-2 h-2 rounded-full bg-crimson" />
                   <span className="font-sans text-[10px] font-semibold tracking-[0.15em] uppercase text-white/40">
                     Shorts
                   </span>
                 </div>
 
-                {/* iframe wrapper — 9:16 */}
-                <div className="aspect-[9/16] w-full relative">
+                {/* iframe wrapper — 9:16 mobile / fill height desktop */}
+                <div className="aspect-[9/16] lg:aspect-auto lg:flex-1 w-full relative">
                   <iframe
                     src={SHORTS_VIDEO_URL}
                     title={v.shorts.title}
@@ -104,7 +104,7 @@ export default function VideoSection() {
                 </div>
 
                 {/* Meta */}
-                <div className="px-4 py-3 border-t border-white/10">
+                <div className="px-4 py-3 border-t border-white/10 flex-shrink-0">
                   <p className="font-sans text-xs font-semibold text-white leading-snug">
                     {v.shorts.title}
                   </p>
