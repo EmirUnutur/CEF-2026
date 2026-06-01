@@ -93,18 +93,18 @@ export default function VisitorForm() {
   return (
     <section id="ziyaretci" className="bg-ivory ivory-grid py-12 sm:py-16 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left — info panel */}
           <ScrollReveal direction="left">
-            <div className="lg:sticky lg:top-28">
-              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-4 flex items-center gap-2">
+            <div>
+              <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center gap-2">
                 <span className="inline-block w-8 h-px bg-current" />
                 {f.overline}
               </p>
 
               <h2
-                className="font-display text-navy-900 leading-none mb-6"
+                className="font-display text-navy-900 leading-none mb-4"
                 style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
               >
                 {f.titleLines[0]}<br />
@@ -112,13 +112,13 @@ export default function VisitorForm() {
                 {f.titleLines[2]}
               </h2>
 
-              <div className="w-12 h-1 bg-crimson mb-8" />
+              <div className="w-12 h-1 bg-crimson mb-5" />
 
-              <p className="font-sans text-base text-navy-600 leading-relaxed mb-8">
+              <p className="font-sans text-base text-navy-600 leading-relaxed mb-6">
                 {f.desc(t.dates)}
               </p>
 
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-3 mb-7">
                 {f.benefits.map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="w-5 h-5 rounded-full bg-crimson/10 border border-crimson/30 flex items-center justify-center flex-shrink-0">
@@ -129,7 +129,7 @@ export default function VisitorForm() {
                 ))}
               </ul>
 
-              <div className="mt-10 border-l-2 border-crimson pl-5">
+              <div className="border-l-2 border-crimson pl-5">
                 <p className="font-display text-2xl text-navy-900 tracking-wide">
                   {t.dates}
                 </p>
