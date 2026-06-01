@@ -91,7 +91,8 @@ export const translations = {
         title: 'FİRMANIZI TANITMA FIRSATI',
         desc: "Firmanızı tanıtın, yeni iş bağlantıları kurun, ürün ve hizmetlerinizi hedef kitlenizle buluşturun. Trakya'nın sanayi profesyonelleriyle aynı platformda yer alın.",
         features: ['Stand alanı ve sergileme imkânı', 'Sektörel networking etkinlikleri', 'Katılımcı rehberinde yer alma', 'Sosyal medya tanıtım desteği', 'Özel B2B görüşme imkânı'],
-        cta: 'Katılımcı Bilgisi Al',
+        cta: 'Katılım İçin İletişime Geçin',
+        urgency: 'Sınırlı stand alanı için başvurunuzu erkenden yapın.',
       },
       visitor: {
         subtitle: 'Ziyaretçiler İçin',
@@ -99,6 +100,11 @@ export const translations = {
         desc: "Sektördeki yenilikleri keşfedin, üreticilerle tanışın, yeni tedarik ve iş fırsatları yakalayın. 3 günlük etkinlik boyunca Trakya sanayiinin kalbi burada atacak.",
         features: ['Ücretsiz ziyaretçi girişi', 'Canlı ürün demonstrasyonları', 'Konferans ve seminer programı', 'Sektörel tanışma etkinlikleri', 'Fuar kataloğu ve rehber'],
         cta: 'Ziyaretçi Kayıt',
+      },
+      download: {
+        label: 'Katılımcı Firma Listesi',
+        desc: 'ÇEF 2026\'ya katılım sağlayacak firmaların güncel listesini Excel formatında indirin.',
+        cta: 'Excel Olarak İndir',
       },
     },
     form: {
@@ -275,7 +281,8 @@ export const translations = {
         title: 'SHOWCASE YOUR COMPANY',
         desc: "Introduce your company, build new business connections, and bring your products and services to your target audience. Be on the same platform as Thrace's industrial professionals.",
         features: ['Exhibition stand & display space', 'Sectoral networking events', 'Listing in exhibitor directory', 'Social media promotion support', 'Private B2B meeting opportunities'],
-        cta: 'Get Exhibitor Info',
+        cta: 'Get in Touch for Participation',
+        urgency: 'Apply early — limited stand space available.',
       },
       visitor: {
         subtitle: 'For Visitors',
@@ -283,6 +290,11 @@ export const translations = {
         desc: "Discover sector innovations, meet manufacturers, and seize new procurement and business opportunities. Throughout the 3-day event, the heart of Thrace's industry will beat here.",
         features: ['Free visitor admission', 'Live product demonstrations', 'Conference and seminar program', 'Sectoral networking events', 'Fair catalogue and guide'],
         cta: 'Register to Visit',
+      },
+      download: {
+        label: 'Exhibitor Company List',
+        desc: 'Download the current list of companies that will be participating in CEF 2026 in Excel format.',
+        cta: 'Download as Excel',
       },
     },
     form: {
