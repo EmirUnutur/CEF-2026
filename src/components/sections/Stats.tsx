@@ -10,17 +10,18 @@ export default function Stats() {
     <section id="istatistikler" className="bg-white py-20 sm:py-28 border-t border-ivory-dark">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
-        <ScrollReveal className="text-center mb-14">
-          <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-6 h-px bg-current opacity-60" />
+        <ScrollReveal className="mb-12">
+          <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-crimson mb-4 flex items-center gap-2">
+            <span className="inline-block w-8 h-px bg-current" />
             {t.stats.overline}
-            <span className="inline-block w-6 h-px bg-current opacity-60" />
           </p>
           <h2
             className="font-display text-navy-900 leading-none"
-            style={{ fontSize: 'clamp(36px, 6vw, 72px)' }}
+            style={{ fontSize: 'clamp(44px, 8vw, 100px)', lineHeight: 0.9 }}
           >
-            {t.stats.title}
+            {t.stats.titleLines[0]}
+            <br />
+            <span className="text-crimson">{t.stats.titleLines[1]}</span>
           </h2>
         </ScrollReveal>
 
