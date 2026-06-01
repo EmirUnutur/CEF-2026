@@ -59,7 +59,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, rgba(6,14,30,0.88) 0%, rgba(6,14,30,0.35) 30%, rgba(6,14,30,0.0) 60%), linear-gradient(to right, rgba(6,14,30,0.55) 0%, rgba(6,14,30,0.1) 40%, rgba(6,14,30,0.0) 100%)',
+              'linear-gradient(rgba(6,14,30,0.22), rgba(6,14,30,0.22)), linear-gradient(to top, rgba(6,14,30,0.97) 0%, rgba(6,14,30,0.72) 35%, rgba(6,14,30,0.28) 65%, rgba(6,14,30,0.08) 100%), linear-gradient(to right, rgba(6,14,30,0.82) 0%, rgba(6,14,30,0.38) 45%, rgba(6,14,30,0.0) 100%)',
           }}
           aria-hidden="true"
         />
@@ -97,8 +97,8 @@ export default function Hero() {
             {/* Overline */}
             <motion.p
               variants={itemVariants}
-              className="font-sans text-xs font-semibold tracking-[0.25em] uppercase text-white/70 mb-6 flex items-center gap-3"
-              style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+              className="font-sans text-xs font-semibold tracking-[0.25em] uppercase text-white/95 mb-6 flex items-center gap-3"
+              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.95), 0 2px 16px rgba(0,0,0,0.7)' }}
             >
               <span className="inline-block w-8 h-px bg-crimson" />
               {t.hero.edition(SITE_CONFIG.edition)}
@@ -125,8 +125,8 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6">
               <span className="h-px flex-1 max-w-16 bg-crimson/60" />
               <p
-                className="font-sans text-base sm:text-xl text-white/90 max-w-xl leading-relaxed"
-                style={{ textShadow: '0 1px 10px rgba(0,0,0,0.55), 0 0 20px rgba(0,0,0,0.25)' }}
+                className="font-sans text-base sm:text-xl text-white leading-relaxed"
+                style={{ textShadow: '0 1px 4px rgba(0,0,0,0.98), 0 3px 14px rgba(0,0,0,0.85), 0 8px 32px rgba(0,0,0,0.5)' }}
               >
                 {SITE_CONFIG.slogan}
               </p>
@@ -134,11 +134,11 @@ export default function Hero() {
 
             {/* Date + Venue badges */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
-              <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2">
+              <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white bg-black/45 backdrop-blur-md border border-white/30 px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
                 {t.dates}
               </span>
-              <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2">
+              <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white bg-black/45 backdrop-blur-md border border-white/30 px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
                 {SITE_CONFIG.venue}
               </span>
@@ -166,8 +166,8 @@ export default function Hero() {
         style={{ opacity }}
       >
         <span
-          className="font-sans text-xs tracking-[0.2em] uppercase text-white/55"
-          style={{ textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}
+          className="font-sans text-xs tracking-[0.2em] uppercase text-white/80"
+          style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}
         >
           {t.hero.scroll}
         </span>
