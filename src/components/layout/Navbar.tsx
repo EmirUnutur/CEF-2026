@@ -92,9 +92,10 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className={`font-sans text-sm font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
-                scrolled ? 'text-navy-700' : 'text-white/85'
+              className={`font-sans text-[13.5px] font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
+                scrolled ? 'text-navy-700' : 'text-white/95'
               }`}
+              style={!scrolled ? { textShadow: '0 1px 12px rgba(0,0,0,0.7), 0 0 24px rgba(0,0,0,0.35)' } : undefined}
             >
               {item.label}
               <span className="absolute bottom-0 left-3 right-3 h-px bg-crimson scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
@@ -109,9 +110,10 @@ export default function Navbar() {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1 font-sans text-sm font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
-                scrolled ? 'text-navy-700' : 'text-white/85'
+              className={`flex items-center gap-1 font-sans text-[13.5px] font-medium px-3 py-2 transition-colors duration-200 hover:text-crimson relative group ${
+                scrolled ? 'text-navy-700' : 'text-white/95'
               }`}
+              style={!scrolled ? { textShadow: '0 1px 12px rgba(0,0,0,0.7), 0 0 24px rgba(0,0,0,0.35)' } : undefined}
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
             >

@@ -95,7 +95,8 @@ export default function Hero() {
             {/* Overline */}
             <motion.p
               variants={itemVariants}
-              className="font-sans text-xs font-semibold tracking-[0.25em] uppercase text-white/50 mb-6 flex items-center gap-3"
+              className="font-sans text-xs font-semibold tracking-[0.25em] uppercase text-white/70 mb-6 flex items-center gap-3"
+              style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
             >
               <span className="inline-block w-8 h-px bg-crimson" />
               {t.hero.edition(SITE_CONFIG.edition)}
@@ -121,7 +122,10 @@ export default function Hero() {
             {/* Divider */}
             <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6">
               <span className="h-px flex-1 max-w-16 bg-crimson/60" />
-              <p className="font-sans text-base sm:text-lg text-white/70 max-w-xl leading-relaxed">
+              <p
+                className="font-sans text-base sm:text-xl text-white/90 max-w-xl leading-relaxed"
+                style={{ textShadow: '0 1px 10px rgba(0,0,0,0.55), 0 0 20px rgba(0,0,0,0.25)' }}
+              >
                 {SITE_CONFIG.slogan}
               </p>
             </motion.div>
@@ -159,7 +163,10 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.6 }}
         style={{ opacity }}
       >
-        <span className="font-sans text-xs tracking-[0.2em] uppercase text-white/40">
+        <span
+          className="font-sans text-xs tracking-[0.2em] uppercase text-white/55"
+          style={{ textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}
+        >
           {t.hero.scroll}
         </span>
         <motion.div
