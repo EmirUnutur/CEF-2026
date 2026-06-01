@@ -15,9 +15,7 @@ import VisitorForm from './components/sections/VisitorForm'
 import PastFairs from './components/sections/PastFairs'
 import Gallery from './components/sections/Gallery'
 import Location from './components/sections/Location'
-import CTASection from './components/sections/CTASection'
 import Contact from './components/sections/Contact'
-import OrganizerBanner from './components/sections/OrganizerBanner'
 
 export default function App() {
   return (
@@ -26,7 +24,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <OrganizerBanner />
         <Countdown />
         <About />
         <WhyCEF />
@@ -38,7 +35,6 @@ export default function App() {
         <Gallery />
         <Location />
         <Contact />
-        <CTASection />
       </main>
       <Footer />
       <BackToTop />
