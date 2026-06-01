@@ -79,7 +79,7 @@ export default function VideoSection() {
 
           {/* ── Shorts Video (9:16) ───────────────────────────────────── */}
           <ScrollReveal direction="right" delay={0.25} className="w-full lg:w-auto lg:flex-shrink-0 flex justify-center lg:justify-start">
-            <div className="w-full max-w-[220px] lg:max-w-none lg:w-[200px] xl:w-[220px]">
+            <div className="w-full max-w-[300px] lg:max-w-none lg:w-[270px] xl:w-[300px]">
 
               {/* Phone-frame card */}
               <div className="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden">
