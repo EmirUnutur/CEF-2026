@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircleIcon } from '@heroicons/react/24/outline'
 import ScrollReveal from '../ui/ScrollReveal'
 import Button from '../ui/Button'
-import { SITE_CONFIG } from '../../data/content'
 import { useLang } from '../../contexts/LanguageContext'
 
 interface FormData {
@@ -132,7 +131,7 @@ export default function VisitorForm() {
                 <p className="font-display text-2xl text-navy-900 tracking-wide">
                   {t.dates}
                 </p>
-                <p className="font-sans text-sm text-navy-500 mt-1">{SITE_CONFIG.venue}</p>
+                <p className="font-sans text-sm text-navy-500 mt-1">{t.venue}</p>
               </div>
             </div>
           </ScrollReveal>
@@ -160,7 +159,7 @@ export default function VisitorForm() {
                       {f.successDesc(form.email)}
                     </p>
                     <p className="font-sans text-xs text-navy-400">
-                      {t.dates} · {SITE_CONFIG.venue}
+                      {t.dates} · {t.venue}
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setForm(INITIAL) }}

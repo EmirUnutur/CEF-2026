@@ -129,7 +129,7 @@ export default function Navbar() {
               scrolled ? 'text-navy-900 hover:text-crimson' : 'text-white hover:text-white/70'
             }`}
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? 'Menüyü Kapat' : 'Menüyü Aç'}
+            aria-label={mobileOpen ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}

@@ -1,4 +1,4 @@
-import { SITE_CONFIG, FOOTER_LINKS, SOCIAL_LINKS } from '../../data/content'
+import { SITE_CONFIG, SOCIAL_LINKS } from '../../data/content'
 import { SOCIAL_ICON_MAP } from '../ui/SocialIcons'
 import { useLang } from '../../contexts/LanguageContext'
 
@@ -21,17 +21,17 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-sans text-sm text-white/55 leading-relaxed mb-5">
-              {SITE_CONFIG.slogan}
+              {t.slogan}
             </p>
             <p className="font-sans text-sm text-white/40 leading-relaxed">
               {t.dates}
               <br />
-              {SITE_CONFIG.venue}
+              {t.venue}
             </p>
           </div>
 
           {/* Footer link columns */}
-          {FOOTER_LINKS.map((col) => (
+          {t.footer.links.map((col) => (
             <div key={col.heading}>
               <h4 className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">
                 {col.heading}

@@ -3,6 +3,8 @@ export type Lang = 'tr' | 'en'
 export const translations = {
   tr: {
     dates: '09–11 Eylül 2026',
+    slogan: "Trakya'nın Sanayi Gücünü Buluşturan Endüstriyel Platform",
+    venue: 'Çerkezköy Kapalı Pazar Alanı',
     nav: {
       items: [
         { label: 'Ana Sayfa', href: '#anasayfa' },
@@ -18,11 +20,14 @@ export const translations = {
         { label: 'İletişim', href: '#iletisim', description: 'Bize ulaşın' },
       ],
       visitorCta: 'Ziyaretçi Kayıt',
+      openMenu: 'Menüyü Aç',
+      closeMenu: 'Menüyü Kapat',
     },
     banner: {
       text: 'Çerkezköy Ticaret ve Sanayi Odası Katkılarıyla',
       sub: 'Çerkezköy Endüstriyel Fuarı 2026 Organizatörü',
       details: 'Detaylar',
+      ariaLabel: 'Fuar Organizatörü',
     },
     hero: {
       edition: (n: number) => `Çerkezköy Endüstriyel Fuarı — ${n}. Edisyon`,
@@ -190,11 +195,32 @@ export const translations = {
     footer: {
       contactHeading: 'İletişim',
       copyright: 'Tüm hakları saklıdır.',
+      links: [
+        {
+          heading: 'Fuar',
+          items: [
+            { label: 'Ana Sayfa', href: '#anasayfa' },
+            { label: 'Neden ÇEF?', href: '#neden-cef' },
+            { label: 'Sektörler', href: '#sektorler' },
+            { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
+          ],
+        },
+        {
+          heading: 'Katılım',
+          items: [
+            { label: 'Katılımcı Bilgisi', href: '#katilim' },
+            { label: 'Ziyaretçi Kayıt', href: '#ziyaretci' },
+            { label: 'Geçmiş Fuarlar', href: '#gecmis-fuarlar' },
+            { label: 'Ulaşım', href: '#iletisim' },
+          ],
+        },
+      ],
     },
     videos: {
       overline: 'Neden ÇEF?',
       title: 'FUARI YAKINDAN KEŞFEDİN',
       subtitle: "ÇEF 2026'nın atmosferini, organizasyon yapısını ve fuar deneyimini videolarla inceleyin.",
+      playLabel: (title: string) => `${title} videosunu oynat`,
       main: {
         title: 'ÇEF 2026 Tanıtım Videosu',
         desc: 'Fuarın genel atmosferini, sektörlerini ve ziyaretçi deneyimini yakından keşfedin.',
@@ -208,6 +234,8 @@ export const translations = {
 
   en: {
     dates: '09–11 September 2026',
+    slogan: "The Industrial Platform Bringing Together the Power of Thrace",
+    venue: 'Çerkezköy Closed Market Area',
     nav: {
       items: [
         { label: 'Home', href: '#anasayfa' },
@@ -223,11 +251,14 @@ export const translations = {
         { label: 'Contact', href: '#iletisim', description: 'Get in touch' },
       ],
       visitorCta: 'Register',
+      openMenu: 'Open Menu',
+      closeMenu: 'Close Menu',
     },
     banner: {
       text: 'With the Contribution of Çerkezköy Chamber of Commerce and Industry',
       sub: 'Organizer of Çerkezköy Industrial Fair 2026',
       details: 'Details',
+      ariaLabel: 'Fair Organizer',
     },
     hero: {
       edition: (n: number) => `Çerkezköy Industrial Fair — Edition ${n}`,
@@ -395,11 +426,32 @@ export const translations = {
     footer: {
       contactHeading: 'Contact',
       copyright: 'All rights reserved.',
+      links: [
+        {
+          heading: 'Fair',
+          items: [
+            { label: 'Home', href: '#anasayfa' },
+            { label: 'Why CEF?', href: '#neden-cef' },
+            { label: 'Sectors', href: '#sektorler' },
+            { label: 'Past Fairs', href: '#gecmis-fuarlar' },
+          ],
+        },
+        {
+          heading: 'Participation',
+          items: [
+            { label: 'Exhibitor Info', href: '#katilim' },
+            { label: 'Visitor Registration', href: '#ziyaretci' },
+            { label: 'Past Fairs', href: '#gecmis-fuarlar' },
+            { label: 'Location', href: '#iletisim' },
+          ],
+        },
+      ],
     },
     videos: {
       overline: 'Why CEF?',
       title: 'DISCOVER THE FAIR UP CLOSE',
       subtitle: 'Explore the atmosphere, organization structure and fair experience of CEF 2026 through videos.',
+      playLabel: (title: string) => `Play ${title}`,
       main: {
         title: 'CEF 2026 Introduction Video',
         desc: 'Discover the fair atmosphere, sectors and visitor experience up close.',

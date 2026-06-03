@@ -132,7 +132,7 @@ export default function Hero() {
                 className="font-sans text-base sm:text-xl text-white leading-relaxed"
                 style={{ textShadow: '0 1px 4px rgba(0,0,0,0.98), 0 3px 14px rgba(0,0,0,0.85), 0 8px 32px rgba(0,0,0,0.5)' }}
               >
-                {SITE_CONFIG.slogan}
+                {t.slogan}
               </p>
             </motion.div>
 
@@ -144,7 +144,7 @@ export default function Hero() {
               </span>
               <span className="inline-flex items-center gap-2 font-sans text-sm font-medium text-white bg-black/45 backdrop-blur-md border border-white/30 px-4 py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-crimson" />
-                {SITE_CONFIG.venue}
+                {t.venue}
               </span>
             </motion.div>
 

@@ -16,7 +16,7 @@ export default function OrganizerBanner() {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
-      aria-label="Fuar Organizatörü"
+      aria-label={t.banner.ariaLabel}
     >
       <div className="ivory-grid absolute inset-0 opacity-60" aria-hidden="true" />
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-crimson" aria-hidden="true" />

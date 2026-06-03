@@ -8,10 +8,12 @@ const IFRAME_ALLOW =
 function YouTubeEmbed({
   id,
   title,
+  ariaLabel,
   portrait = false,
 }: {
   id: string
   title: string
+  ariaLabel: string
   portrait?: boolean
 }) {
   const [loaded, setLoaded] = useState(false)
@@ -35,7 +37,7 @@ function YouTubeEmbed({
       type="button"
       onClick={() => setLoaded(true)}
       className="absolute inset-0 w-full h-full group/preview overflow-hidden bg-navy-800 text-left"
-      aria-label={`${title} videosunu oynat`}
+      aria-label={ariaLabel}
     >
       <img
         src={thumbnail}
@@ -59,6 +61,7 @@ function YouTubeEmbed({
 export default function VideoSection() {
   const { t } = useLang()
   const v = t.videos
+  const playLabel = v.playLabel
 
   return (
     <section
@@ -93,7 +96,7 @@ export default function VideoSection() {
             <div className="bg-navy-900 border border-white/10 overflow-hidden group">
               <div className="h-0.5 bg-crimson w-full" />
               <div className="aspect-video w-full relative">
-                <YouTubeEmbed id="iLOfDr_saa4" title={v.main.title} />
+                <YouTubeEmbed id="iLOfDr_saa4" title={v.main.title} ariaLabel={playLabel(v.main.title)} />
               </div>
               <div className="px-5 py-4 border-t border-white/10">
                 <p className="font-sans text-sm font-semibold text-white leading-snug">
@@ -116,7 +119,7 @@ export default function VideoSection() {
                   </span>
                 </div>
                 <div className="aspect-[9/16] lg:aspect-auto lg:flex-1 w-full relative">
-                  <YouTubeEmbed id="soiKJnToqB4" title={v.shorts.title} portrait />
+                  <YouTubeEmbed id="soiKJnToqB4" title={v.shorts.title} ariaLabel={playLabel(v.shorts.title)} portrait />
                 </div>
                 <div className="px-4 py-3 border-t border-white/10 flex-shrink-0">
                   <p className="font-sans text-xs font-semibold text-white leading-snug">

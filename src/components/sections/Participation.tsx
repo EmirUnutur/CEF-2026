@@ -88,7 +88,7 @@ export default function Participation() {
                   {p.contact.heading}
                 </p>
                 <p className="font-sans text-sm text-white/65 leading-relaxed">
-                  Stand alanı, katılım koşulları ve fiyatlandırma hakkında bilgi almak için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz.
+                  {p.contact.desc}
                 </p>
               </div>
 
