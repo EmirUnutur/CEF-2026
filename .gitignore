@@ -1,5 +1,9 @@
 # Claude Code internal files
 .claude/
+.agents/
+
+# Development debug artifacts
+fix/
 
 # R statistics history
 .Rhistory
